@@ -1,0 +1,242 @@
+body {
+    font-family:"ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+
+.content {
+    padding: 30px 0;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fixed {
+    position: fixed;
+    top: 30px;
+}
+
+.link {
+    float: right;
+    margin: 5px;
+}
+.link a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.logo{
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+
+    -webkit-box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
+    -moz-box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
+    box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.logo img{
+    width: 100%;
+}
+
+.head-ad {
+    text-align: right;
+}
+
+.category {
+    font-weight: bold;
+}
+
+.widget_search.styled.bread {
+    margin-bottom: 15px;
+}
+.widget_search.styled.bread .item {
+    display: inline
+}
+.widget_search.styled.bread .inner {
+    padding: 10px;
+}
+.widget_search.styled.bread .inner a {
+    color: #5c5146;
+    font-weight: bold;
+}
+
+.widget-container .widget-row{
+    width: 100%;
+    padding: 19px 20px 19px 33px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom:0;
+    border-top: 1px solid;
+}
+.widget-container .list-group-item{
+    border-left: none;
+    border-right: none;
+    padding: 11px 15px;
+}
+
+.user-menu .ul-number {
+    background: #aba98c;
+}
+
+.dropdown .a-number{
+    color: #ffffff;
+    font-size: 15px;
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding: 18px 23px 14px 16px;
+    border-bottom: 3px solid transparent;
+}
+
+.ribbon strong {
+    font-size: 14px;
+}
+
+.comment-entry .description{
+    font-weight: bold;
+}
+.comment-entry .name{
+    font-weight: bold;
+    font-size: 15px;
+    color: #5c5146;
+}
+
+.comment-text .time{
+    float: right;
+}
+.comment-text .rating{
+    float: left;
+}
+
+.comment-avatar,
+.comment-avatar .avatar,
+.comment-avatar img{
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+.comment-avatar .btn{
+    margin-top: 10px;
+}
+.comment-avatar img{
+    width: 70px;
+    height: 70px;
+}
+
+.new {
+    float: left;
+}
+.old {
+    float: right;
+}
+.order {
+    margin-left: -40px;
+    margin-top: -24px;
+    margin-bottom: 0px;
+}
+
+.undernavi .btn {
+    margin-bottom: 10px;
+}
+
+.footer-right {
+    margin-top: 30px;
+    color: #ffffff;
+}
+.footer-right a {
+    color: #ffffff;
+    font-weight: bold;
+}
+.footer-right #twitter-widget-0 {
+    width: 100px !important;
+}
+.footer-right .fb-like {
+    margin-right: 10px;
+}
+.footer-right .hatena-bookmark-button-frame {
+    margin-right: 10px;
+}
+.footer-right #___plusone_0 {
+    width: 80px !important;
+}
+.footer-right .addthis_button {
+    margin-right: 10px;
+}
+
+.share {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    text-align: center;
+    padding: 10px;
+    background: #ffffff;
+
+    -webkit-box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
+    -moz-box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
+    box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    list-style-type:none;
+}
+.share p {
+    margin-bottom: 10px;
+}
+.share .addthis_native_toolbox{
+    text-align: center;
+}
+.ninja_onebutton {
+    margin-left: 10px;
+    margin-bottom: -10px;
+}
+
+
+@media (max-width:479px){
+    body {
+        font-family:Verdana, Roboto, "Droid Sans", sans-serif;
+    }
+}
+
+@media (min-width: 768px){
+    .comment-body {
+        min-height: 142px;
+        min-height: 242px !important;
+    
+    }
+    .comment-list.styled .comment-text{
+        padding: 25px 27px 26px 231px;
+    }
+    .comment-list.styled .comment-arrow {
+        width: 198px;
+    }
+    .comment-avatar .avatar{
+        width: 146px;
+        height: 146px;
+        overflow: hidden;
+    }
+    .comment-avatar img{
+        width: 146px;
+        height: 146px;
+    }
+}
+
+@media (max-width: 768px){
+    .is-pc {
+        display: none;
+    }
+}
+
+@media (max-width: 1350px){
+    .share {
+        display: none;
+    }
+}

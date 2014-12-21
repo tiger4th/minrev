@@ -4,7 +4,7 @@
 $id = '1';
 
 if(isset($_GET['id'])){
-	$id = $_GET['id'];
+    $id = $_GET['id'];
 }
 $urlC = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/categorySearch?appid=".$app_id."&category_id=".$id;
 
@@ -17,22 +17,22 @@ $responseC = curl_exec($ch);
 $resC = json_decode($responseC, true);
 
 if(!isset($resC["ResultSet"])){
-	echo '<link rel="stylesheet" type="text/css" href="./style.css" />ただいまご利用いただけません。しばらくお待ちください。<br /><a href="http://minrev.main.jp/">トップページに戻る</a>';
-	exit;
+    echo '<meta charset="utf-8">ただいまご利用いただけません。しばらくお待ちください。<br><a href="http://minrev.main.jp/">トップページに戻る</a>';
+    exit;
 }
 
 // レビューパーツ
 if (isset($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"][1]["Id"])) {
-	$p_cid = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"][1]["Id"];
+    $p_cid = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"][1]["Id"];
 } else {
-	$p_cid = 1;
+    $p_cid = 1;
 }
 
 //アフィリエイトウィジェット
 $keyword = "特価";
 $category = "";
 if(isset($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Id"])){
-	$category = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Id"];
+    $category = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Id"];
 }
 
 $urlW = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/queryRanking?appid=".$app_id."&hits=2&category_id=".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Id"];
@@ -42,23 +42,23 @@ $responseW = curl_exec($ch);
 $resW = json_decode($responseW, true);
 
 if(isset($resW["ResultSet"][0]["Result"][0]["Query"]) && substr($resW["ResultSet"][0]["Result"][0]["Query"], 0, 1) != "-"){
-	if($resW["ResultSet"][0]["Result"][0]["Query"] != "あすつく" && !ctype_digit($resW["ResultSet"][0]["Result"][0]["Query"])){
-		$keyword = rawurlencode($resW["ResultSet"][0]["Result"][0]["Query"]);
-	}else{
-		$keyword = rawurlencode($resW["ResultSet"][0]["Result"][1]["Query"]);
-	}
+    if($resW["ResultSet"][0]["Result"][0]["Query"] != "あすつく" && !ctype_digit($resW["ResultSet"][0]["Result"][0]["Query"])){
+        $keyword = rawurlencode($resW["ResultSet"][0]["Result"][0]["Query"]);
+    }else{
+        $keyword = rawurlencode($resW["ResultSet"][0]["Result"][1]["Query"]);
+    }
 }else{
-	$keyword = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"];
-	$keyword = str_replace("全般", "", $keyword);
-	$keyword = str_replace("その他", "", $keyword);
-	$keyword = str_replace("関連用品", "", $keyword);
-	$keyword = str_replace("用品作成", "", $keyword);
-	$keyword = str_replace("用品", "", $keyword);
-	$keyword = explode("、", $keyword);
-	$keyword = explode("（", $keyword[0]);
-	$keyword = explode("用", $keyword[0]);
-	if(isset($keyword[1])){$keyword[0] = $keyword[1];}
-	$keyword = $keyword[0];
+    $keyword = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"];
+    $keyword = str_replace("全般", "", $keyword);
+    $keyword = str_replace("その他", "", $keyword);
+    $keyword = str_replace("関連用品", "", $keyword);
+    $keyword = str_replace("用品作成", "", $keyword);
+    $keyword = str_replace("用品", "", $keyword);
+    $keyword = explode("、", $keyword);
+    $keyword = explode("（", $keyword[0]);
+    $keyword = explode("用", $keyword[0]);
+    if(isset($keyword[1])){$keyword[0] = $keyword[1];}
+    $keyword = $keyword[0];
 }
 
 
@@ -69,6 +69,7 @@ $older   = "";
 $oldest  = "";
 $blinker = "";
 $res = array();
+$notice = array();
 
 $sort    = '-updatetime';
 $results = 10;
@@ -78,22 +79,22 @@ $help    = 0;
 $nb      = 0;
 
 if(isset($_GET['sort']) && ($_GET['sort'] == '-updatetime' || $_GET['sort'] == '+updatetime' || $_GET['sort'] == '-review_rate' || $_GET['sort'] == '+review_rate')){
-	$sort = rawurlencode($_GET['sort']);
+    $sort = rawurlencode($_GET['sort']);
 }
 if(isset($_GET['results']) && ctype_digit($_GET['results'])){
-	$results = $_GET['results'];
+    $results = $_GET['results'];
 }
 if(isset($_GET['start']) && ctype_digit($_GET['start'])){
-	$start = $_GET['start'];
+    $start = $_GET['start'];
 }
 if(isset($_GET['price']) && ctype_digit($_GET['price'])){
-	$price = $_GET['price'];
+    $price = $_GET['price'];
 }
 if(isset($_GET['help']) && ctype_digit($_GET['help'])){
-	$help = $_GET['help'];
+    $help = $_GET['help'];
 }
 if(isset($_GET['nb']) && ctype_digit($_GET['nb'])){
-	$nb = $_GET['nb'];
+    $nb = $_GET['nb'];
 }
 
 //レビュー取得
@@ -104,81 +105,65 @@ $response = curl_exec($ch);
 $res = json_decode($response, true);
 
 if(!isset($res["ResultSet"])){
-	$res["ResultSet"][0] = "";
-	$res["ResultSet"]["totalResultsAvailable"] = 0;
-	$res["ResultSet"]["totalResultsReturned"] = 0;
-	$category = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["ParentId"];
+    $res["ResultSet"][0] = "";
+    $res["ResultSet"]["totalResultsAvailable"] = 0;
+    $res["ResultSet"]["totalResultsReturned"] = 0;
+    $category = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["ParentId"];
 }
 
 if($res["ResultSet"]["totalResultsReturned"] <= 0){
-	$tweet[0]["image"] = "./image/caution.gif";
-	if($start == 1){
-		$tweet[0]["text"]  = "このカテゴリにはまだレビューがありません";
-	}else{
-		$tweet[0]["text"]  = "レビュー表示位置が不正です";
-	}
+    if($start == 1){
+        $notice = "このカテゴリにはまだレビューがありません";
+    }else{
+        $notice = "レビュー表示位置が不正です";
+    }
 }
 
+/*
+// Medium画像がないとき
+foreach($res["ResultSet"]["Result"] as $key => $item){
+    if (!@file_get_contents($item["Target"]["Image"]["Medium"]["Url"], NULL, NULL, 0, 1)) {
+        $res["ResultSet"]["Result"][$key]["Target"]["Image"]["Medium"]["Url"]
+            = $item["Target"]["Image"]["Small"]["Url"];
+    }
+}
+*/
 
-//ヘルプ
-if($help == 1){
-	require("./help.php");
-	$blinker = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.$start.'">元のページに戻る</a>&nbsp;&nbsp;';
-}elseif($help == 2){
-	require("./update.php");
-	$blinker = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.$start.'">元のページに戻る</a>&nbsp;&nbsp;';
-}else{
-
-
+/*
 //値段取得
 if($price==1){
-	$i=0;
-	foreach($res["ResultSet"]["Result"] as $item){
-	$p = $item["Target"]["Code"];
-	$urlP = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemLookup?appid=".$app_id."&itemcode=".$p;
-	
-	curl_setopt($ch, CURLOPT_URL, $urlP);
-	$responseP = curl_exec($ch);
-	$resP = json_decode($responseP, true);
-	
-	if($resP["ResultSet"]["totalResultsReturned"] > 0){
-		$res["ResultSet"]["Result"][$i]["Target"]["Price"] = "&nbsp;&yen;".number_format($resP["ResultSet"][0]["Result"][0]["Price"]["_value"]);
-	}else{
-		$res["ResultSet"]["Result"][$i]["Target"]["Price"] = "&nbsp;販売終了";
-	}
-	
-	$i++;
-	}
+    $i=0;
+    foreach($res["ResultSet"]["Result"] as $item){
+    $p = $item["Target"]["Code"];
+    $urlP = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemLookup?appid=".$app_id."&itemcode=".$p;
+    
+    curl_setopt($ch, CURLOPT_URL, $urlP);
+    $responseP = curl_exec($ch);
+    $resP = json_decode($responseP, true);
+    
+    if($resP["ResultSet"]["totalResultsReturned"] > 0){
+        $res["ResultSet"]["Result"][$i]["Target"]["Price"] = "&nbsp;&yen;".number_format($resP["ResultSet"][0]["Result"][0]["Price"]["_value"]);
+    }else{
+        $res["ResultSet"]["Result"][$i]["Target"]["Price"] = "&nbsp;販売終了";
+    }
+    
+    $i++;
+    }
 }
-
+*/
 
 curl_close($ch);
 
-
 //ページ移動
-
 if($res["ResultSet"]["totalResultsAvailable"] > $results && !isset($text)){
-	if($start > 1){
-		$newest = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'">&#171; 最新</a>&nbsp;';
-		$newer = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($start - $results).'">&#139; 前へ</a>';
-	}
-	if($res["ResultSet"]["totalResultsAvailable"] > ($start + $results - 1)){
-		$older = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($start + $results).'">次へ &#155;</a>&nbsp;';
-		$oldest = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($res["ResultSet"]["totalResultsAvailable"] - $results + 1).'">最古 &#187;</a>';
-		//$oldest = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.((floor($res["ResultSet"]["totalResultsAvailable"] / $results) * $results) + 1).'">最古 &#187;</a>';
-	}
-	
-	if($newer == "" || $older == ""){
-		$blinker .= $newest.$newer.' <a href="#top">上へ↑</a> '.$older.$oldest;
-	}else{
-		$blinker .= $newest.$newer.' <a href="#top">上へ↑</a> '.$older.$oldest;
-	}
-	$blinker .= '&nbsp;&nbsp;';
+    if($start > 1){
+        $newest = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'" class="btn btn-left btn-red"><span>&#171; 最新</span></a>&nbsp;';
+        $newer = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($start - $results).'" class="btn btn-left"><span>&#139; 前へ</span></a>';
+    }
+    if($res["ResultSet"]["totalResultsAvailable"] > ($start + $results - 1)){
+        $older = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($start + $results).'" class="btn btn-right"><span>次へ &#155;</span></a>&nbsp;';
+        if ($id != 1) {
+            $oldest = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($res["ResultSet"]["totalResultsAvailable"] - $results + 1).'" class="btn btn-right"><span>最古 &#187;</span></a>';
+        }
+    }
 }
-
-
-}
-
-
-
-?>

@@ -1,44 +1,61 @@
 <?php require("./app_id.php"); ?>
 <?php require("./curl.php"); ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="ja" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="ja" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="ja" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="ja" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ja" class="no-js"> <!--<![endif]-->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="keywords" content="レビュー,新着,ヤフー,Yahoo!,ショッピング,オークション,商品<?php
+<meta charset="utf-8">
+<meta name="keywords" content="レビュー,新着,ヤフー,Yahoo!,ショッピング,商品<?php
 if($id!=1){
-	echo ",".str_replace("、", ",", $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]);
+    echo ",".str_replace("、", ",", $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]);
 }
 ?>" />
 <meta name="description" content="<?php
 if($id==1){
-	echo "Yahoo!ショッピングから最新のレビューをお届けします。";
+    echo "Yahoo!ショッピングから最新のレビューをお届けします。";
 }else{
-	echo "Yahoo!ショッピングから".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の最新口コミ情報をお届けします。";
+    echo "Yahoo!ショッピングから".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の最新口コミ情報をお届けします。";
 }
 ?>" />
-<meta http-equiv="content-Style-type" content="text/css" />
-<meta http-equiv="content-Script-type" content="text/javascript" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title><?php
-switch($help){
-	case 0:
-		if($id==1){
-			echo "みんなの新着レビュー - 最新の口コミ情報をお届け！";
-		}else{
-			echo $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の新着レビュー - みんなの新着レビュー";
-		}
-		break;
-	case 1:
-		echo "ヘルプ - みんなの新着レビュー";
-		break;
-	case 2:
-		echo "更新履歴 - みんなの新着レビュー";
-		break;
-}
+    if($id==1){
+        echo "みんなの新着レビュー - 最新の口コミ情報をお届け！";
+    }else{
+        echo $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の新着レビュー - みんなの新着レビュー";
+    }
 ?></title>
-<link rel="stylesheet" type="text/css" href="./style.css" />
+<!-- main JS libs -->
+<script src="js/libs/modernizr.min.js"></script>
+<script src="js/libs/jquery-1.10.0.js"></script>
+<script src="js/libs/jquery-ui.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+
+<!-- Style CSS -->
+<link href="css/bootstrap.css" media="screen" rel="stylesheet">
+<link href="style.css" media="screen" rel="stylesheet">
+<link href="my.css" media="screen" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- scripts -->
+<script src="js/general.js"></script>
+
+<!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
+<!--[if gte IE 9]>
+<style type="text/css">
+    .gradient {filter: none !important;}
+</style>
+<![endif]-->
+
 <link rel="shortcut icon" href="./image/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="icon" href="./image/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'ja'}
+</script>
 
 <script type="text/javascript">
 
@@ -54,196 +71,368 @@ switch($help){
 
 </script>
 </head>
-<body>
-<div align="right"><span class="sm">
-<a name="top" id="top">&nbsp;</a>
-<?php echo '<a href="./index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'">トップ</a>'; ?>
- - 
-<?php echo '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.$start.'&help=1">ヘルプ</a>'; ?>
- - 
-<?php echo '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.$start.'&help=2">更新履歴</a>'; ?>
- - 
-<?php echo '<a href="http://tiger4th.com/">リンク</a>'; ?>
-&nbsp;&nbsp;
-</span></div>
 
-<div id="wrapper">
-<div id="header">
-<div id="boxlogo" align="center">
-<?php echo '<a href="./index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'"><img src="./image/logo.png" height="75" width="300" border="0" alt="みんなの新着レビュー" /></a>'; ?>
+<body id="top">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="link is-pc">
+    <a href="http://tiger4th.com/">tiger4th.com</a>
 </div>
 
-<div id="ad">
-<script type="text/javascript" src="http://i.yimg.jp/images/auct/blogparts/shp_review_bp.js?rss=2&rcl=0&cid=<?php echo $p_cid; ?>&aty=yid&affid=FD.RWZqlDqeHYKdLMFcQUA--&pt=5&appid=PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"></script>
+<div class="container container-wide">
+
+<!-- content -->
+<div class="content " role="main">
+<!-- row -->
+<div class="row">
+<div class="col-sm-4">
+    <!-- Website Menu -->
+    <div class="logo">
+        <a href="index.php?id=1&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>">
+            <img src="./image/logo.png" alt="みんなの新着レビュー"/>
+        </a>
+    </div>
+    <!--/ Website Menu -->
+    <br><br>
 </div>
 
+<div class="col-sm-8 is-pc">
+    <div class="head-ad">
+        <!-- admax -->
+        <script src="http://adm.shinobi.jp/s/53ef44afc127bc67dcee549a289d6c74"></script>
+        <!-- admax -->
+    </div>
+    <br><br>
+</div>
+</div>
+<!--/ row -->
+
+<!-- row -->
+<div class="row">
+<div class="col-sm-4">
+    <div class="widget-container boxed category">
+        <?php if ($id == 1) { ?>
+        <h3 class="widget-title">商品カテゴリ</h3>
+        <div class="inner list-group">
+                <a class="list-group-item" href="index.php?id=13457&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-female fa-fw"></i>ファッション</a>
+                <a class="list-group-item" href="index.php?id=2498&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-cutlery fa-fw"></i>食品</a>
+                <a class="list-group-item" href="index.php?id=2513&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-fire fa-fw"></i>レジャー、アウトドア</a>
+                <a class="list-group-item" href="index.php?id=2500&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-medkit fa-fw"></i>ダイエット、健康</a>
+                <a class="list-group-item" href="index.php?id=2501&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-tint fa-fw"></i>コスメ、香水</a>
+                <a class="list-group-item" href="index.php?id=2502&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-laptop fa-fw"></i>パソコン、周辺機器</a>
+                <a class="list-group-item" href="index.php?id=2504&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-camera fa-fw"></i>AV機器、カメラ</a>
+                <a class="list-group-item" href="index.php?id=2505&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-plug fa-fw"></i>家電</a>
+                <a class="list-group-item" href="index.php?id=2506&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-home fa-fw"></i>家具、インテリア</a>
+                <a class="list-group-item" href="index.php?id=2507&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-leaf fa-fw"></i>花、ガーデニング</a>
+                <a class="list-group-item" href="index.php?id=2508&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-archive fa-fw"></i>キッチン、生活雑貨、日用品</a>
+                <a class="list-group-item" href="index.php?id=2503&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-wrench fa-fw"></i>DIY、工具、文具</a>
+                <a class="list-group-item" href="index.php?id=2509&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-paw fa-fw"></i>ペット用品、生き物</a>
+                <a class="list-group-item" href="index.php?id=2510&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-bell-o fa-fw"></i>楽器、趣味、学習</a>
+                <a class="list-group-item" href="index.php?id=2511&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-gamepad fa-fw"></i>ゲーム、おもちゃ</a>
+                <a class="list-group-item" href="index.php?id=2497&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-child fa-fw"></i>ベビー、キッズ、マタニティ</a>
+                <a class="list-group-item" href="index.php?id=2512&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-futbol-o fa-fw"></i>スポーツ</a>
+                <a class="list-group-item" href="index.php?id=2514&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-bicycle fa-fw"></i>自転車、車、バイク</a>
+                <a class="list-group-item" href="index.php?id=2516&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-music fa-fw"></i>CD、音楽ソフト、チケット</a>
+                <a class="list-group-item" href="index.php?id=2517&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-film fa-fw"></i>DVD、映像ソフト</a>
+                <a class="list-group-item" href="index.php?id=10002&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-book fa-fw"></i>本、雑誌、コミック</a>
+        </div>
+        <?php } else {
+            echo '<h3 class="widget-title">'.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"].'</h3>';
+
+            foreach($resC["ResultSet"][0]["Result"]["Categories"]["Children"] as $item){ 
+                if(isset($item["Title"]["Short"])){
+                    echo '<a class="list-group-item" href="index.php?id='.$item["Id"].'&sort='.$sort.'&results='.$results.'&price='.$price.'">'.$item["Title"]["Short"].'</a>';
+                }
+            }
+
+            if(isset($_GET['id']) && $_GET['id'] > 1){
+                echo '<a class="list-group-item" href="index.php?id='.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["ParentId"].'&sort='.$sort.'&results='.$results.'&price='.$price.'"><i class="fa fa-angle-up"></i>上のカテゴリに戻る</a>';
+                echo '<a class="list-group-item" href="index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'"><i class="fa fa-angle-double-up"></i>トップに戻る</a>';
+            }
+        } ?>
+    </div>
+
+    <div class="center is-pc">
+        <script type="text/javascript" src="http://i.yimg.jp/images/shp_front/js/adparts/YahooShoppingAdParts.js"></script>
+        <script type="text/javascript">
+        YahooShoppingAdParts({
+         api:"itemSearch",
+         query:{
+          query:decodeURIComponent("<?php echo $keyword; ?>"),
+          ad_type:"300_250_itemlist",
+          yahoo_color_border:"aaaaaa",
+          yahoo_color_link:"0000ff",
+          yahoo_color_bg:"ffffff",
+          yahoo_color_price:"d50000",
+          category_id:"<?php echo $category; ?>",
+          availability:"1",
+          sort:"-score",
+          discount:"",
+          shipping:"",
+          affiliate_type:"yid",
+          affiliate_id:"FD.RWZqlDqeHYKdLMFcQUA--",
+          appid:"PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"
+         },
+         iframe:{
+          width:300,
+          height:250
+         }
+        })
+        </script>
+    </div>
+    <div id="sidead" class="is-pc">
+        <div class="center">
+            <script type="text/javascript" src="http://i.yimg.jp/images/auct/blogparts/shp_review_bp.js?rss=0&rcl=0&cid=<?php echo $p_cid; ?>&aty=yid&affid=FD.RWZqlDqeHYKdLMFcQUA--&pt=5&appid=PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"></script>
+        </div>
+        <div class="center">
+            <script type="text/javascript" src="http://adm.shinobi.jp/s/7391682fb9058aeb3b57caab93354a2f"></script>
+        </div>
+        <div class="center">
+            <script type="text/javascript" src="http://adm.shinobi.jp/s/56176dcf60edc3216b9be217d64d8ca0"></script>
+        </div>
+    </div>
 </div>
 
-<div id="pan">
+<div class="col-sm-8">
+
+<!-- row -->
+<div class="row">
+<div class="col-sm-12">
+    <div class="widget-container widget_search styled boxed line-left bread">
+        <div class="inner">
 <?php
-if($id==1){
-	echo "<h1><span class='sm'>Yahoo!ショッピングから最新のレビューをお届け！</span></h1>";
-}else{
-	foreach($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"] as $item){
-		if (is_array($item)) {
-			if($item["Id"]==1){
-				echo '<a href="./index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'"><span class="sm">トップ</span></a>';
-			}elseif($item["Id"]==$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Id"]){
-				echo '<span class="sm"> &#155; </span><h1><span class="sm">'.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"].'</span></h1>';
-			}else{
-				echo '<span class="sm"> &#155; </span><a href="./index.php?id='.$item["Id"].'&sort='.$sort.'&results='.$results.'&price='.$price.'"><span class="sm">'.$item["Title"]["Name"].'</span></a>';
-			}
-		}
-	}
+if ($id == 1) {
+    echo "<span class='sm'>Yahoo!ショッピングから最新のレビューをお届け！</span>";
+} else {
+    foreach ($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"] as $item) {
+        if (is_array($item)) {
+            if ($item["Id"] == 1) {
+                echo '<div class="item"><a href="index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'"><span>トップ</span></a></div>';
+            } else {
+                echo '<span> &gt; </span><div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="index.php?id='.$item["Id"].'&sort='.$sort.'&results='.$results.'&price='.$price.'" itemprop="url"><span itemprop="title">'.$item["Title"]["Name"].'</span></a></div>';
+            }
+        }
+    }
 }
 ?>
+        </div>
+    </div>
+</div>
+</div>
+<!--/ row -->
+
+<div class="row">
+    <?php if ($res["ResultSet"]["totalResultsReturned"] > 0) { ?>
+    <div class="col-sm-4">
+        <div class="user-menu">
+            <ul class="dropdown clearfix boxed ul-number">
+                <li class="first last"><span class="a-number"><span><?php echo number_format($res["ResultSet"]["totalResultsAvailable"]); ?>件中<br><?php echo number_format($start); ?>～<?php echo number_format($start + $res["ResultSet"]["totalResultsReturned"] - 1); ?>件目</span></span></li>
+            </ul>
+        </div>
+    </div>
+    <?php } ?>
+
+    <div class="col-sm-4">
+        <div class="user-menu">
+            <ul class="dropdown clearfix boxed">
+                <li class="first parent"><a href="#" hidefocus="true" style="outline: none;"><i class="icon-menu icon-menu4"></i><span>表示順</span></a>
+                    <ul>
+                        <li class="first"><a href="index.php?id=<?php echo $id; ?>&sort=-updatetime&results=<?php echo $results; ?>&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">新着</a></li>
+                        <li class=""><a href="index.php?id=<?php echo $id; ?>&sort=-review_rate&results=<?php echo $results; ?>&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">高評価優先</a></li>
+                        <li class="last"><a href="index.php?id=<?php echo $id; ?>&sort=%2Breview_rate&results=<?php echo $results; ?>&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">低評価優先</a></li>
+                    </ul>
+                </li>
+                <li><div class="ribbon">
+                    <span>
+                        <strong>
+                            <?php
+                                if ($sort == "-updatetime") {
+                                    echo "<br>新着順";
+                                } elseif ($sort == "-review_rate") {
+                                    echo "高評価優先";
+                                } elseif ($sort == "%2Breview_rate") {
+                                    echo "低評価優先";
+                                }
+                            ?>
+                        </strong>
+                    </span>
+                </div></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="user-menu">
+            <ul class="dropdown clearfix boxed">
+                <li class="first parent"><a href="#" hidefocus="true" style="outline: none;"><i class="icon-menu icon-menu6"></i><span>表示数</span></a>
+                    <ul>
+                        <li class="first"><a href="index.php?id=<?php echo $id; ?>&sort=<?php echo $sort; ?>&results=10&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">10件</a></li>
+                        <li class=""><a href="index.php?id=<?php echo $id; ?>&sort=<?php echo $sort; ?>&results=30&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">30件</a></li>
+                        <li class="last"><a href="index.php?id=<?php echo $id; ?>&sort=<?php echo $sort; ?>&results=50&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">50件</a></li>
+                    </ul>
+                </li>
+                <li><div class="ribbon">
+                    <span>
+                        <strong>
+                            <br>
+                            <?php
+                                if ($results == 10) {
+                                    echo "10件";
+                                } elseif ($results == 30) {
+                                    echo "30件";
+                                } elseif ($results == 50) {
+                                    echo "50件";
+                                }
+                            ?>
+                        </strong>
+                    </span>
+                </div></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
-
-<div id="container">
-<div id="contents">
-<div class="boxhead" align="left">
-<div id="subject">
-<h2><span class="mdw">
-<?php
-switch ($help) {
-	case 0:
-		echo '新着レビュー';
-		break;
-	case 1:
-		echo 'ヘルプ';
-		break;
-	case 2:
-		echo '更新履歴';
-		break;
-}
-?>
-</span></h2>
-</div>
-<div id="page">
-&nbsp;<span class="smw"><?php
-if(isset($res["ResultSet"]["totalResultsReturned"]) && $res["ResultSet"]["totalResultsReturned"] > 0 && !isset($tweet)){
- echo number_format($res["ResultSet"]["totalResultsAvailable"])."件中 ".number_format($start)."～".number_format($start + $res["ResultSet"]["totalResultsReturned"] - 1)."件目";
-} ?></span>
-<?php if($help==0){echo '<a href="http://ic.edge.jp/page2feed/http://minrev.main.jp/index.php?id='.$id.'&price=1&nb=1" target="_blank"><img src="./image/rss.png" border="0" alt=" RSS" style="vertical-align: middle;" /></a>';} ?>
-</div>
-</div>
-
-<div class="box" align="left">
-<?php require("./review.php"); ?>
-</div>
-
-<p id="undernavi"><span class="sm">
-<?php echo $blinker; ?>
-</span></p>
-
-
-</div>
-</div>
-
-<div id="sidebar" align="center">
-<div class="boxhead" align="left">
-<h2><span class="mdw">商品カテゴリ</span></h2>
-</div>
-<div class="box" align="left">
-<?php require("./category.php"); ?>
-</div>
-<br />
-
-<div class="boxhead" align="left">
-<h2><span class="mdw">リンク</span></h2>
-</div>
-<div class="box" align="center">
-<a href="http://minrev.main.jp/c/"><img src="./image/bannerC.png" border="0" alt="みんなの新着レビューC" /></a>
-</div>
-<div class="box" align="center">
-<a href="http://tiger4th.com/yamazon/"><img src="./image/yamazon.png" border="0" alt="yamazon" /></a>
-</div>
-<div class="box" align="center">
-<a href="http://tiger4th.com/anibuzz/"><img src="./image/anibuzz.png" border="0" alt="anibuzz" /></a>
-</div>
-<br />
-
-<script type="text/javascript" src="http://i.yimg.jp/images/auct/blogparts/auc_bp.js?s=1&cl=4&qu=<?php echo $keyword; ?>&cid=0&di=0&od=1&ti=&pt=0&dotyid=aucb%2Fp%2FFD.RWZqlDqeHYKdLMFcQUA--&sid=2219441&pid=878398084"></script>
-<br /><br />
-
-<div class="box2">
-<script type="text/javascript" src="http://i.yimg.jp/images/shp_front/js/adparts/YahooShoppingAdParts.js"></script>
-<script type="text/javascript">
-YahooShoppingAdParts({
- api:"itemSearch",
- query:{
-  query:decodeURIComponent("<?php echo $keyword; ?>"),
-  ad_type:"160_600_itemlist",
-  yahoo_color_border:"aaaaaa",
-  yahoo_color_link:"0000ff",
-  yahoo_color_bg:"ffffff",
-  yahoo_color_price:"d50000",
-  category_id:"<?php echo $category; ?>",
-  availability:"1",
-  sort:"-score",
-  discount:"",
-  shipping:"",
-  affiliate_type:"yid",
-  affiliate_id:"FD.RWZqlDqeHYKdLMFcQUA--",
-  appid:"PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"
- },
- iframe:{
-  width:160,
-  height:600
- }
-})
-</script>
-</div>
-<br />
-
-<?php if($results >= 20){ ?>
-<div class="box2">
-<!-- admax -->
-<script type="text/javascript" src="http://adm.shinobi.jp/s/7391682fb9058aeb3b57caab93354a2f"></script>
-<!-- admax -->
-</div>
-<br />
-
-<div class="box2">
-<!-- admax -->
-<script type="text/javascript" src="http://adm.shinobi.jp/s/56176dcf60edc3216b9be217d64d8ca0"></script>
-<!-- admax -->
-</div>
-<br />
+<?php if ($res["ResultSet"]["totalResultsReturned"] <= 0) { ?>
+    <div class="comment-list styled clearfix">
+        <ol>
+            <li class="comment">
+                <div class="comment-body boxed">
+                    <div class="comment-arrow"></div>
+                    <div class="comment-avatar">
+                    </div>
+                    <div class="comment-text">
+                        <div class="comment-author clearfix">
+                            <a class="link-author"><?php echo $notice; ?></a>
+                        </div>
+                        <div class="comment-entry">
+                            <br>
+                            <a href="http://minrev.main.jp/"><p class="name">トップに戻る</p></a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </li>
+        </ol>
+    </div>
+<?php } else { ?>
+<?php foreach($res["ResultSet"]["Result"] as $item){ ?>
+    <div class="comment-list styled clearfix">
+        <ol>
+            <li class="comment">
+                <div class="comment-body boxed">
+                    <div class="comment-arrow"></div>
+                    <div class="comment-avatar">
+                        <div class="avatar"><a href="<?php echo $item["Target"]["Url"]; ?>#ItemInfo" target="_blank"><img src="<?php echo $item["Target"]["Image"]["Medium"]["Url"]; ?>"/></a></div>
+                        <a href="<?php echo $item["Target"]["Url"]; ?>#ItemInfo" class="btn btn-green" target="_blank"><span>詳細</span></a>
+                    </div>
+                    <div class="comment-text">
+                        <div class="rating"><!--
+                            <?php for ($i=0; $i < $item["Ratings"]["Rate"]; $i++) { ?>
+                                --><span class="star on"></span><!--
+                            <?php } ?>
+                            --><!--
+                            <?php for ($i=0; $i < 5 - $item["Ratings"]["Rate"]; $i++) { ?>
+                                --><span class="star off"></span><!--
+                            <?php } ?>
+                        --></div>
+                        <p class="time"><?php
+                            $time = substr($item["Update"], 0, 19);
+                            $time = str_replace('-', '/', $time);
+                            $time = str_replace('T', ' ',$time);
+                            echo $time; 
+                        ?></p>
+                        <div class="clearfix"></div>
+                        <div class="comment-author clearfix">
+                            <a href="<?php echo $item["Url"]; ?>" class="link-author" target="_blank"><?php echo $item["ReviewTitle"]; ?></a>
+                        </div>
+                        <div class="comment-entry">
+                            <p class="description"><?php echo $item["Description"]; ?></p>
+                            <a href="<?php echo $item["Target"]["Url"]; ?>#ItemInfo" target="_blank"><p class="name"><?php echo $item["Target"]["Name"]; ?></p></a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </li>
+        </ol>
+    </div>
+<?php } ?>
 <?php } ?>
 
-<!-- AddThis Button BEGIN -->
-<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4e3ab77310f2fc55"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e3ab77310f2fc55"></script>
-<!-- AddThis Button END -->
-<?php require("./js/addthis.js"); ?>
+<div class="undernavi">
+    <div class="new"><?php echo $newest."&nbsp;&nbsp;".$newer; ?></div>
+    <div class="old"><?php echo $older."&nbsp;&nbsp;".$oldest; ?></div>
+</div>
+<div class="clearfix"></div>
 
-<!-- Begin Yahoo! JAPAN Web Services Attribution Snippet -->
-<a href="http://developer.yahoo.co.jp/about">
-<img src="http://i.yimg.jp/images/yjdn/yjdn_attbtn1_125_17.gif" title="Webサービス by Yahoo! JAPAN" alt="Web Services by Yahoo! JAPAN" width="125" height="17" border="0" style="margin:15px 15px 15px 15px"></a>
-<!-- End Yahoo! JAPAN Web Services Attribution Snippet -->
+<div class="footer-right">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://minrev.main.jp/" data-text="みんなの新着レビュー">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <div class="fb-like" data-href="http://minrev.main.jp/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+
+    <a href="http://b.hatena.ne.jp/entry/http://minrev.main.jp/" class="hatena-bookmark-button" data-hatena-bookmark-title="みんなの新着レビュー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+    <div class="g-plusone" data-size="medium" data-href="http://minrev.main.jp/"></div>
+    
+    <span class="is-pc">
+    <!-- AddThis Button BEGIN -->
+    <a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4e3ab77310f2fc55"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e3ab77310f2fc55"></script>
+    <!-- AddThis Button END -->
+    </span>
+
+    <a href="#top" class="anchor"><img src="./image/top.png" width="70px"/></a>
+
+    <br><br>
+    <span>Copyright &copy; <?php echo date("Y"); ?> <a href="http://tiger4th.com/">tiger4th.com</a> All Rights Reserved.</span>
+</div>
+</div>
+</div>
+<!--/ row -->
 
 </div>
-
-<div id="footer">
-<p>
-<span class="sm">
-<?php echo '<a href="./index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'">トップ</a>'; ?>
- - 
-<?php echo '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.$start.'&help=1">ヘルプ</a>'; ?>
- - 
-<?php echo '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.$start.'&help=2">更新履歴</a>'; ?>
-</span>
-
-<br />
-<span class="xs">Copyright &copy; <?php echo date("Y"); ?> <a href="http://minrev.main.jp/">みんなの新着レビュー</a> All Rights Reserved.</span>
-</p>
-</div>
+<!--/ content -->
 
 </div>
+<!--/ container -->
 
-<script src="http://f1.nakanohito.jp/lit/index.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">try { var lb = new Vesicomyid.Bivalves("114566"); lb.init(); } catch(err) {} </script>
+<!-- share -->
+<div class="share is-pc">
+    <p>
+        <a href="#top" class="anchor"><img src="./image/top.png" width="70px"/></a>
+    </p>
+    <p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://minrev.main.jp/" data-text="みんなの新着レビュー" data-count="vertical">Tweet</a>
+    </p>
+    <p>
+        <div class="fb-like" data-href="http://minrev.main.jp/" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>
+    </p>
+    <p>
+        <a href="http://b.hatena.ne.jp/entry/http://minrev.main.jp/" class="hatena-bookmark-button" data-hatena-bookmark-title="みんなの新着レビュー" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </p>
+    <p>
+        <div class="ninja_onebutton">
+            <script type="text/javascript">
+            //<![CDATA[
+            (function(d){
+            if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_f5aaf6564c6827526c4857336d8ab33d)=='undefined'){
+                document.write("<sc"+"ript type='text\/javascript' src='http:\/\/omt.shinobi.jp\/b\/f5aaf6564c6827526c4857336d8ab33d'><\/sc"+"ript>");
+            }else{
+                window.NINJA_CO_JP_ONETAG_BUTTON_f5aaf6564c6827526c4857336d8ab33d.ONETAGButton_Load();}
+            })(document);
+            //]]>
+            </script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+        </div>
+    </p>
+</div>
+<!--/ share -->
+</div>
 </body>
 </html>
