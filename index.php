@@ -119,7 +119,7 @@ if($id==1){
 <div class="col-sm-4">
     <div class="widget-container boxed category">
         <?php if ($id == 1) { ?>
-        <h3 class="widget-title">商品カテゴリ</h3>
+        <h1 class="widget-title">商品カテゴリ</h1>
         <div class="inner list-group">
                 <a class="list-group-item" href="index.php?id=13457&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-female fa-fw"></i>ファッション</a>
                 <a class="list-group-item" href="index.php?id=2498&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-cutlery fa-fw"></i>食品</a>
@@ -144,7 +144,7 @@ if($id==1){
                 <a class="list-group-item" href="index.php?id=10002&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-book fa-fw"></i>本、雑誌、コミック</a>
         </div>
         <?php } else {
-            echo '<h3 class="widget-title">'.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"].'</h3>';
+            echo '<h1 class="widget-title">'.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"].'</h1>';
 
             foreach($resC["ResultSet"][0]["Result"]["Categories"]["Children"] as $item){ 
                 if(isset($item["Title"]["Short"])){
@@ -349,11 +349,11 @@ if ($id == 1) {
                         ?></p>
                         <div class="clearfix"></div>
                         <div class="comment-author clearfix">
-                            <a href="<?php echo $item["Url"]; ?>" class="link-author" target="_blank"><?php echo $item["ReviewTitle"]; ?></a>
+                            <a href="<?php echo $item["Url"]; ?>" class="link-author" target="_blank"><h3><?php echo $item["ReviewTitle"]; ?></h3></a>
                         </div>
                         <div class="comment-entry">
                             <p class="description"><?php echo $item["Description"]; ?></p>
-                            <a href="<?php echo $item["Target"]["Url"]; ?>#ItemInfo" target="_blank"><p class="name"><?php echo $item["Target"]["Name"]; ?></p></a>
+                            <a href="<?php echo $item["Target"]["Url"]; ?>#ItemInfo" target="_blank"><h2 class="name"><?php echo $item["Target"]["Name"]; ?></h2></a>
                         </div>
                     </div>
                     <div class="clear"></div>

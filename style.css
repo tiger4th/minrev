@@ -175,7 +175,7 @@ html body * dd.clear {
 /*-----------------------------------*/
 /* Typography */
 /*-----------------------------------*/
-
+/*
 h1, h2, h3, h4, h5, h6 {
 	color: #5c5146;
     font-weight: 400;
@@ -191,7 +191,7 @@ h3{font-size:21px}
 h4{font-size:19px}
 h5{font-size:17px}
 h6{font-size:15px}
-
+*/
 em{font-style: italic;}
 strong{font-weight: 700;}
 small{font-size: 85%;}
