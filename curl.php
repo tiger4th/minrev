@@ -72,7 +72,7 @@ $res = array();
 $notice = array();
 
 $sort    = '-updatetime';
-$results = 10;
+$results = 30;
 $start   = 1;
 $price   = 0;
 $help    = 0;
