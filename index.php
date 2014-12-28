@@ -405,6 +405,7 @@ if ($id == 1) {
 </div>
 <!--/ container -->
 
+<?php if (!$sp) { ?>
 <!-- share -->
 <div class="share is-pc">
     <p>
@@ -435,6 +436,7 @@ if ($id == 1) {
     </p>
 </div>
 <!--/ share -->
+<?php } ?>
 </div>
 </body>
 </html>
