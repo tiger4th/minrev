@@ -207,7 +207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="inner">
 <?php
 if ($id == 1) {
-    echo "<span class='sm'>Yahoo!ショッピングから最新のレビューをお届け！</span>";
+    echo "<span>Yahoo!ショッピングから最新のレビューをお届け！</span>";
 } else {
     foreach ($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"] as $item) {
         if (is_array($item)) {
