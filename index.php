@@ -188,9 +188,11 @@ if($id==1){
         </script>
     </div>
     <div id="sidead" class="is-pc">
+        <?php if (!$sp) { ?>
         <div class="center">
             <script type="text/javascript" src="http://i.yimg.jp/images/auct/blogparts/shp_review_bp.js?rss=0&rcl=0&cid=<?php echo $p_cid; ?>&aty=yid&affid=FD.RWZqlDqeHYKdLMFcQUA--&pt=5&appid=PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"></script>
         </div>
+        <?php } ?>
         <div class="center">
             <script type="text/javascript" src="http://adm.shinobi.jp/s/7391682fb9058aeb3b57caab93354a2f"></script>
         </div>

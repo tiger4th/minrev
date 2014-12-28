@@ -167,3 +167,10 @@ if($res["ResultSet"]["totalResultsAvailable"] > $results && !isset($text)){
         }
     }
 }
+
+//デバイス
+$ua = $_SERVER['HTTP_USER_AGENT'];
+$sp = false;
+if ((strpos($ua, 'iPhone') !== false) || (strpos($ua, 'iPad') !== false) || (strpos($ua, 'iPod') !== false) || (strpos($ua, 'Android') !== false) || (strpos($ua, 'Windows Phone') !== false)) {
+    $sp = true;
+}
