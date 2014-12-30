@@ -296,7 +296,7 @@ if ($id == 1) {
     </div>
 </div>
 
-<?php if ($res["ResultSet"]["totalResultsReturned"] <= 0) { ?>
+<?php if ($notice != "") { ?>
     <div class="comment-list styled clearfix">
         <ol>
             <li class="comment">
@@ -386,7 +386,13 @@ if ($id == 1) {
     <!-- AddThis Button END -->
     </span>
 
+    <br>
     <a href="#top" class="anchor"><img src="./image/top.png" width="70px"/></a>
+
+    <!-- Begin Yahoo! JAPAN Web Services Attribution Snippet -->
+    <a href="http://developer.yahoo.co.jp/about">
+    <img src="http://i.yimg.jp/images/yjdn/yjdn_attbtn1_125_17.gif" title="Webサービス by Yahoo! JAPAN" alt="Web Services by Yahoo! JAPAN" width="125" height="17" border="0" style="margin:15px 15px 0px 15px"></a>
+    <!-- End Yahoo! JAPAN Web Services Attribution Snippet -->
 
     <br><br>
     <span>Copyright &copy; <?php echo date("Y"); ?> <a href="http://tiger4th.com/">tiger4th.com</a> All Rights Reserved.</span>

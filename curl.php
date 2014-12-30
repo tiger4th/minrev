@@ -69,14 +69,12 @@ $older   = "";
 $oldest  = "";
 $blinker = "";
 $res = array();
-$notice = array();
+$notice = "";
 
 $sort    = '-updatetime';
 $results = 30;
 $start   = 1;
 $price   = 0;
-$help    = 0;
-$nb      = 0;
 
 if(isset($_GET['sort']) && ($_GET['sort'] == '-updatetime' || $_GET['sort'] == '+updatetime' || $_GET['sort'] == '-review_rate' || $_GET['sort'] == '+review_rate')){
     $sort = rawurlencode($_GET['sort']);
@@ -89,12 +87,6 @@ if(isset($_GET['start']) && ctype_digit($_GET['start'])){
 }
 if(isset($_GET['price']) && ctype_digit($_GET['price'])){
     $price = $_GET['price'];
-}
-if(isset($_GET['help']) && ctype_digit($_GET['help'])){
-    $help = $_GET['help'];
-}
-if(isset($_GET['nb']) && ctype_digit($_GET['nb'])){
-    $nb = $_GET['nb'];
 }
 
 //レビュー取得
@@ -155,15 +147,15 @@ if($price==1){
 curl_close($ch);
 
 //ページ移動
-if($res["ResultSet"]["totalResultsAvailable"] > $results && !isset($text)){
+if($res["ResultSet"]["totalResultsAvailable"] > $results){
     if($start > 1){
-        $newest = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'" class="btn btn-left btn-red"><span>&#171; 最新</span></a>&nbsp;';
-        $newer = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($start - $results).'" class="btn btn-left"><span>&#139; 前へ</span></a>';
+        $newest = '<a href="index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'" class="btn btn-left btn-red"><span>&#171; 最新</span></a>&nbsp;';
+        $newer = '<a href="index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($start - $results).'" class="btn btn-left"><span>&#139; 前へ</span></a>';
     }
     if($res["ResultSet"]["totalResultsAvailable"] > ($start + $results - 1)){
-        $older = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($start + $results).'" class="btn btn-right"><span>次へ &#155;</span></a>&nbsp;';
+        $older = '<a href="index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($start + $results).'" class="btn btn-right"><span>次へ &#155;</span></a>&nbsp;';
         if ($id != 1) {
-            $oldest = '<a href="./index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($res["ResultSet"]["totalResultsAvailable"] - $results + 1).'" class="btn btn-right"><span>最古 &#187;</span></a>';
+            $oldest = '<a href="index.php?id='.$id.'&sort='.$sort.'&results='.$results.'&price='.$price.'&start='.($res["ResultSet"]["totalResultsAvailable"] - $results + 1).'" class="btn btn-right"><span>最古 &#187;</span></a>';
         }
     }
 }
