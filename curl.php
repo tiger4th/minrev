@@ -69,7 +69,7 @@ $older   = "";
 $oldest  = "";
 $blinker = "";
 $res = array();
-$notice = "";
+$notice = array();
 
 $sort    = '-updatetime';
 $results = 30;
@@ -101,14 +101,16 @@ if(!isset($res["ResultSet"])){
     $res["ResultSet"]["totalResultsAvailable"] = 0;
     $res["ResultSet"]["totalResultsReturned"] = 0;
     $category = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["ParentId"];
-}
 
-if($res["ResultSet"]["totalResultsReturned"] <= 0){
+    $notice["title"] = "現在一時的にご利用いただけません";
+    $notice["description"] = "申し訳ございませんが、時間をおいて再度アクセスをお願い致します。";
+}elseif($res["ResultSet"]["totalResultsReturned"] <= 0){
     if($start == 1){
-        $notice = "このカテゴリにはまだレビューがありません";
+        $notice["title"] = "このカテゴリにはレビューがありません";
     }else{
-        $notice = "レビュー表示位置が不正です";
+        $notice["title"] = "レビュー表示位置が不正です";
     }
+    $notice["description"] = '<a href="index.php?id='.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["ParentId"].'&sort='.$sort.'&results='.$results.'&price='.$price.'">上のカテゴリに戻る</a><br><br><a href="index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'">トップに戻る</a>';
 }
 
 /*

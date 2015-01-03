@@ -296,7 +296,7 @@ if ($id == 1) {
     </div>
 </div>
 
-<?php if ($notice != "") { ?>
+<?php if (!empty($notice)) { ?>
     <div class="comment-list styled clearfix">
         <ol>
             <li class="comment">
@@ -306,11 +306,11 @@ if ($id == 1) {
                     </div>
                     <div class="comment-text">
                         <div class="comment-author clearfix">
-                            <a class="link-author"><?php echo $notice; ?></a>
+                            <a class="link-author"><?php echo $notice["title"]; ?></a>
                         </div>
                         <div class="comment-entry">
                             <br>
-                            <a href="http://minrev.main.jp/"><p class="name">トップに戻る</p></a>
+                            <?php echo $notice["description"]; ?>
                         </div>
                     </div>
                     <div class="clear"></div>
