@@ -172,8 +172,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           sort:"-score",
           discount:"",
           shipping:"",
-          affiliate_type:"yid",
-          affiliate_id:"FD.RWZqlDqeHYKdLMFcQUA--",
+          affiliate_type:"vc",
+          affiliate_id:"http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3185576%26pid%3D883213932%26vc_url%3D",
           appid:"PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"
          },
          iframe:{
@@ -186,7 +186,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div id="sidead" class="is-pc">
         <?php if (!$sp) { ?>
         <div class="center">
-            <script type="text/javascript" src="http://i.yimg.jp/images/auct/blogparts/shp_review_bp.js?rss=0&rcl=0&cid=<?php echo $p_cid; ?>&aty=yid&affid=FD.RWZqlDqeHYKdLMFcQUA--&pt=5&appid=PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"></script>
+            <script type="text/javascript" src="http://i.yimg.jp/images/auct/blogparts/shp_review_bp.js?rss=0&rcl=0&cid=<?php echo $p_cid; ?>&aty=vc&affid=http%253A%252F%252Fck.jp.ap.valuecommerce.com%252Fservlet%252Freferral%253Fsid%253D3185576%2526pid%253D883213932%2526vc_url%253D&pt=5&appid=PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"></script>
         </div>
         <?php } ?>
         <div class="center">
@@ -393,6 +393,8 @@ if ($id == 1) {
     <a href="http://developer.yahoo.co.jp/about">
     <img src="http://i.yimg.jp/images/yjdn/yjdn_attbtn1_125_17.gif" title="Webサービス by Yahoo! JAPAN" alt="Web Services by Yahoo! JAPAN" width="125" height="17" border="0" style="margin:15px 15px 0px 15px"></a>
     <!-- End Yahoo! JAPAN Web Services Attribution Snippet -->
+    
+    <img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3185576&pid=883213932" height="1" width="1" Border="0">
 
     <br><br>
     <span>Copyright &copy; <?php echo date("Y"); ?> <a href="http://tiger4th.com/">tiger4th.com</a> All Rights Reserved.</span>

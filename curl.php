@@ -90,7 +90,7 @@ if(isset($_GET['price']) && ctype_digit($_GET['price'])){
 }
 
 //レビュー取得
-$url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/reviewSearch?appid=".$app_id."&affiliate_type=yid&affiliate_id=FD.RWZqlDqeHYKdLMFcQUA--&results=".$results."&category_id=".$id."&sort=".$sort."&start=".$start;
+$url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/reviewSearch?appid=".$app_id."&affiliate_type=vc&affiliate_id=http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3185576%26pid%3D883213932%26vc_url%3D&results=".$results."&category_id=".$id."&sort=".$sort."&start=".$start;
 
 curl_setopt($ch, CURLOPT_URL, $url);
 $response = curl_exec($ch);
@@ -111,6 +111,27 @@ if(!isset($res["ResultSet"])){
         $notice["title"] = "レビュー表示位置が不正です";
     }
     $notice["description"] = '<a href="index.php?id='.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["ParentId"].'&sort='.$sort.'&results='.$results.'&price='.$price.'">上のカテゴリに戻る</a><br><br><a href="index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'">トップに戻る</a>';
+}
+
+// アフィリエイト不可ストアのリンクからアフィリエイトを外す
+$black_list = array(
+    "dell",
+    "n-garden",
+    "abita-club",
+    "kishindo",
+    "morozoff",
+);
+foreach($res["ResultSet"]["Result"] as $key => $item){
+    foreach ($black_list as $black_store) {
+        if (strstr($item["Url"], "%3D".$black_store)) {
+            $explode = explode("vc_url=", $item["Url"]);
+            $res["ResultSet"]["Result"][$key]["Url"] = rawurldecode($explode[1]);
+        }
+        if (strstr($item["Target"]["Url"], "%2F".$black_store."%2F")) {
+            $explode = explode("vc_url=", $item["Target"]["Url"]);
+            $res["ResultSet"]["Result"][$key]["Target"]["Url"] = rawurldecode($explode[1]);
+        }
+    }
 }
 
 /*
