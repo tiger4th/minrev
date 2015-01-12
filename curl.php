@@ -148,10 +148,6 @@ $black_list = array(
 );
 foreach($res["ResultSet"]["Result"] as &$item){
     foreach ($black_list as $black_store) {
-        if (strstr($item["Url"], "%3D".$black_store)) {
-            $explode = explode("vc_url=", $item["Url"]);
-            $item["Url"] = rawurldecode($explode[1]);
-        }
         if (strstr($item["Target"]["Url"], "%2F".$black_store."%2F")) {
             $explode = explode("vc_url=", $item["Target"]["Url"]);
             $item["Target"]["Url"] = rawurldecode($explode[1]);
