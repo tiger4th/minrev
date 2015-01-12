@@ -108,8 +108,12 @@ body {
 .comment-entry .name{
     font-weight: bold;
     font-size: 15px;
-    color: #1111cc;
+    color: #428bca;
     margin-bottom: 0;
+}
+.comment-entry .name:hover,
+.comment-entry .name:focus{
+    color: #2a6496;
 }
 
 .comment-text .time{
