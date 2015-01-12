@@ -96,6 +96,31 @@ curl_setopt($ch, CURLOPT_URL, $url);
 $response = curl_exec($ch);
 $res = json_decode($response, true);
 
+/*
+//値段取得
+if($price==1){
+    $i=0;
+    foreach($res["ResultSet"]["Result"] as $item){
+    $p = $item["Target"]["Code"];
+    $urlP = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemLookup?appid=".$app_id."&itemcode=".$p;
+    
+    curl_setopt($ch, CURLOPT_URL, $urlP);
+    $responseP = curl_exec($ch);
+    $resP = json_decode($responseP, true);
+    
+    if($resP["ResultSet"]["totalResultsReturned"] > 0){
+        $res["ResultSet"]["Result"][$i]["Target"]["Price"] = "&nbsp;&yen;".number_format($resP["ResultSet"][0]["Result"][0]["Price"]["_value"]);
+    }else{
+        $res["ResultSet"]["Result"][$i]["Target"]["Price"] = "&nbsp;販売終了";
+    }
+    
+    $i++;
+    }
+}
+*/
+
+curl_close($ch);
+
 if(!isset($res["ResultSet"])){
     $res["ResultSet"][0] = "";
     $res["ResultSet"]["totalResultsAvailable"] = 0;
@@ -121,18 +146,19 @@ $black_list = array(
     "kishindo",
     "morozoff",
 );
-foreach($res["ResultSet"]["Result"] as $key => $item){
+foreach($res["ResultSet"]["Result"] as &$item){
     foreach ($black_list as $black_store) {
         if (strstr($item["Url"], "%3D".$black_store)) {
             $explode = explode("vc_url=", $item["Url"]);
-            $res["ResultSet"]["Result"][$key]["Url"] = rawurldecode($explode[1]);
+            $item["Url"] = rawurldecode($explode[1]);
         }
         if (strstr($item["Target"]["Url"], "%2F".$black_store."%2F")) {
             $explode = explode("vc_url=", $item["Target"]["Url"]);
-            $res["ResultSet"]["Result"][$key]["Target"]["Url"] = rawurldecode($explode[1]);
+            $item["Target"]["Url"] = rawurldecode($explode[1]);
         }
     }
 }
+unset($item);
 
 /*
 // Medium画像がないとき
@@ -143,31 +169,6 @@ foreach($res["ResultSet"]["Result"] as $key => $item){
     }
 }
 */
-
-/*
-//値段取得
-if($price==1){
-    $i=0;
-    foreach($res["ResultSet"]["Result"] as $item){
-    $p = $item["Target"]["Code"];
-    $urlP = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemLookup?appid=".$app_id."&itemcode=".$p;
-    
-    curl_setopt($ch, CURLOPT_URL, $urlP);
-    $responseP = curl_exec($ch);
-    $resP = json_decode($responseP, true);
-    
-    if($resP["ResultSet"]["totalResultsReturned"] > 0){
-        $res["ResultSet"]["Result"][$i]["Target"]["Price"] = "&nbsp;&yen;".number_format($resP["ResultSet"][0]["Result"][0]["Price"]["_value"]);
-    }else{
-        $res["ResultSet"]["Result"][$i]["Target"]["Price"] = "&nbsp;販売終了";
-    }
-    
-    $i++;
-    }
-}
-*/
-
-curl_close($ch);
 
 //ページ移動
 if($res["ResultSet"]["totalResultsAvailable"] > $results){
