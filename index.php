@@ -36,6 +36,7 @@ if($id==1){
 
 <!-- Style CSS -->
 <link href="css/bootstrap.css" media="screen" rel="stylesheet">
+<link href="css/zocial.css" media="screen" rel="stylesheet">
 <link href="style.css" media="screen" rel="stylesheet">
 <link href="my.css" media="screen" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -352,6 +353,12 @@ if ($id == 1) {
                         <div class="comment-entry">
                             <p class="description"><?php echo $item["Description"]; ?></p>
                             <a href="<?php echo $item["Target"]["Url"]; ?>#ItemInfo" target="_blank"><h2 class="name"><?php echo $item["Target"]["Name"]; ?></h2></a>
+                        </div>
+                        <hr class="comment-hr">
+                        <div class="similar-search">
+                            <span>似たもの検索: </span>
+                            <a href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3185576&pid=883213932&vc_url=<?php echo rawurlencode('http://search.shopping.yahoo.co.jp/search?ei=UTF-8&p='.$item["Target"]["Name"]); ?>" class="zocial yahoo small" target="_blank">Yahoo!で探す</a>
+                            <a href="http://www.amazon.co.jp/gp/search?ie=UTF8&camp=247&creative=1211&index=aps&keywords=<?php echo $item["Target"]["Name"]; ?>&linkCode=ur2&tag=tiger4th-22" class="zocial amazon small" target="_blank">Amazonで探す</a>
                         </div>
                     </div>
                     <div class="clear"></div>
