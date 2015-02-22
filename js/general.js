@@ -2,6 +2,10 @@ jQuery(document).ready(function() {
  	var $ = jQuery;
     var screenRes = $(window).width();
 
+    if (screenRes < 768) {
+        $(".list-group").hide();
+    }
+
     $("[href=#]").click(function(event){
         event.preventDefault();
     });
@@ -100,3 +104,7 @@ jQuery(document).ready(function() {
         return [];
     };
 });
+
+function toggleList() {
+    $(".list-group").slideToggle("fast");
+}
