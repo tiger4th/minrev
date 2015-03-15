@@ -224,6 +224,14 @@ body {
     margin-bottom: -10px;
 }
 
+.associate {
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    transform: scale(0.7);
+}
 
 @media (max-width:479px){
     body {
