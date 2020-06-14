@@ -28,18 +28,12 @@ if($id==1){
         echo $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の新着レビュー - みんなの新着レビュー";
     }
 ?></title>
-<!-- main JS libs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-<!-- Style CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 <link href="css/zocial.css" media="screen" rel="stylesheet">
 <link href="style.css" media="screen" rel="stylesheet">
 <link href="my.css" media="screen" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-<!-- scripts -->
-<script src="js/general.js"></script>
 
 <!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
 <!--[if gte IE 9]>
@@ -356,5 +350,8 @@ if ($id == 1) {
 <!--/ container -->
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/general.js"></script>
 </body>
 </html>
