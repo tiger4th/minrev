@@ -104,7 +104,3 @@ jQuery(document).ready(function() {
         return [];
     };
 });
-
-function toggleList() {
-    $(".list-group").slideToggle("fast");
-}

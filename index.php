@@ -31,7 +31,6 @@ if($id==1){
 <!-- main JS libs -->
 <script src="js/libs/modernizr.min.js"></script>
 <script src="js/libs/jquery-1.10.0.js"></script>
-<script src="js/libs/jquery-ui.min.js"></script>
 <script src="js/libs/bootstrap.min.js"></script>
 
 <!-- Style CSS -->
@@ -53,10 +52,6 @@ if($id==1){
 
 <link rel="shortcut icon" href="./image/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="icon" href="./image/favicon.ico" type="image/vnd.microsoft.icon" />
-
-<script src="https://apis.google.com/js/platform.js" async defer>
-  {lang: 'ja'}
-</script>
 </head>
 
 <body id="top">
@@ -116,7 +111,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="col-sm-4">
     <div class="widget-container boxed category">
         <?php if ($id == 1) { ?>
-        <h1 class="widget-title" onClick="toggleList()">商品カテゴリ<i class="fa fa-bars fa-lg toggle-list"></i></h1>
+        <h1 class="widget-title">商品カテゴリ</h1>
         <div class="inner list-group">
             <a class="list-group-item" href="index.php?id=13457&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-female fa-fw"></i>ファッション</a>
             <a class="list-group-item" href="index.php?id=2498&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-cutlery fa-fw"></i>食品</a>
@@ -141,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <a class="list-group-item" href="index.php?id=10002&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-book fa-fw"></i>本、雑誌、コミック</a>
         </div>
         <?php } else {
-            echo '<h1 class="widget-title" onClick="toggleList()">'.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"].'<i class="fa fa-bars fa-lg toggle-list"></i></h1>';
+            echo '<h1 class="widget-title">'.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"].'</h1>';
             echo '<div class="inner list-group">';
             foreach($resC["ResultSet"][0]["Result"]["Categories"]["Children"] as $item){ 
                 if(isset($item["Title"]["Short"])){
@@ -162,9 +157,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         <div class="center">
             <script type="text/javascript" src="http://adm.shinobi.jp/s/7391682fb9058aeb3b57caab93354a2f"></script>
-        </div>
-        <div class="center">
-            <script type="text/javascript" src="http://adm.shinobi.jp/s/56176dcf60edc3216b9be217d64d8ca0"></script>
         </div>
     </div>
 </div>
@@ -326,7 +318,6 @@ if ($id == 1) {
                         </div>
                         <hr class="comment-hr">
                         <div class="similar-search">
-                            <span>似たもの検索: </span>
                             <a href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3185576&pid=883213932&vc_url=<?php echo rawurlencode('http://search.shopping.yahoo.co.jp/search?ei=UTF-8&p='.$item["Target"]["Name"]); ?>" class="zocial yahoo" target="_blank">Yahoo!で探す</a>
                             <a href="http://www.amazon.co.jp/gp/search?ie=UTF8&camp=247&creative=1211&index=aps&keywords=<?php echo $item["Target"]["Name"]; ?>&linkCode=ur2&tag=tiger4th-22" class="zocial amazon" target="_blank">Amazonで探す</a>
                         </div>
