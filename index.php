@@ -80,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="link is-pc">
-    <a href="http://tiger4th.com/">tiger4th.com</a>
+    <a href="https://tiger4th.com/">tiger4th.com</a>
 </div>
 
 <div class="container container-wide">
@@ -92,7 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="col-sm-4">
     <!-- Website Menu -->
     <div class="logo">
-        <a href="index.php?id=1&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>">
+        <a href="/">
             <img src="./image/logo.png" alt="みんなの新着レビュー"/>
         </a>
     </div>
@@ -376,7 +376,7 @@ if ($id == 1) {
     <img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3185576&pid=883213932" height="1" width="1" Border="0">
 
     <br><br>
-    <span>Copyright &copy; <?php echo date("Y"); ?> <a href="http://tiger4th.com/">tiger4th.com</a> All Rights Reserved.</span>
+    <span>&copy; 2010-<?php echo date("Y"); ?> <a href="https://tiger4th.com/">tiger4th.com</a></span>
 </div>
 </div>
 </div>
