@@ -29,9 +29,7 @@ if($id==1){
     }
 ?></title>
 <!-- main JS libs -->
-<script src="js/libs/modernizr.min.js"></script>
-<script src="js/libs/jquery-1.10.0.js"></script>
-<script src="js/libs/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <!-- Style CSS -->
 <link href="css/bootstrap.css" media="screen" rel="stylesheet">
