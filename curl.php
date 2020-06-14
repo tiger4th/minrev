@@ -28,40 +28,6 @@ if (isset($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"][1]["I
     $p_cid = 1;
 }
 
-//アフィリエイトウィジェット
-$keyword = "特価";
-$category = "";
-if(isset($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Id"])){
-    $category = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Id"];
-}
-
-$urlW = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/queryRanking?appid=".$app_id."&hits=2&category_id=".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Id"];
-
-curl_setopt($ch, CURLOPT_URL, $urlW);
-$responseW = curl_exec($ch);
-$resW = json_decode($responseW, true);
-
-if(isset($resW["ResultSet"][0]["Result"][0]["Query"]) && substr($resW["ResultSet"][0]["Result"][0]["Query"], 0, 1) != "-"){
-    if($resW["ResultSet"][0]["Result"][0]["Query"] != "あすつく" && !ctype_digit($resW["ResultSet"][0]["Result"][0]["Query"])){
-        $keyword = rawurlencode($resW["ResultSet"][0]["Result"][0]["Query"]);
-    }else{
-        $keyword = rawurlencode($resW["ResultSet"][0]["Result"][1]["Query"]);
-    }
-}else{
-    $keyword = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"];
-    $keyword = str_replace("全般", "", $keyword);
-    $keyword = str_replace("その他", "", $keyword);
-    $keyword = str_replace("関連用品", "", $keyword);
-    $keyword = str_replace("用品作成", "", $keyword);
-    $keyword = str_replace("用品", "", $keyword);
-    $keyword = explode("、", $keyword);
-    $keyword = explode("（", $keyword[0]);
-    $keyword = explode("用", $keyword[0]);
-    if(isset($keyword[1])){$keyword[0] = $keyword[1];}
-    $keyword = $keyword[0];
-}
-
-
 //変数
 $newest  = "";
 $newer   = "";

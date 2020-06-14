@@ -155,41 +155,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             echo '</div>';
         } ?>
     </div>
-
-    <div class="center is-pc">
-        <script type="text/javascript" src="http://i.yimg.jp/images/shp_front/js/adparts/YahooShoppingAdParts.js"></script>
-        <script type="text/javascript">
-        YahooShoppingAdParts({
-         api:"itemSearch",
-         query:{
-          query:decodeURIComponent("<?php echo $keyword; ?>"),
-          ad_type:"300_250_itemlist",
-          yahoo_color_border:"aaaaaa",
-          yahoo_color_link:"0000ff",
-          yahoo_color_bg:"ffffff",
-          yahoo_color_price:"d50000",
-          category_id:"<?php echo $category; ?>",
-          availability:"1",
-          sort:"-score",
-          discount:"",
-          shipping:"",
-          affiliate_type:"vc",
-          affiliate_id:"http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3185576%26pid%3D883213932%26vc_url%3D",
-          appid:"PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"
-         },
-         iframe:{
-          width:300,
-          height:250
-         }
-        })
-        </script>
-    </div>
     <div id="sidead" class="is-pc">
-        <?php if (!$sp) { ?>
         <div class="center">
-            <script type="text/javascript" src="http://i.yimg.jp/images/auct/blogparts/shp_review_bp.js?rss=0&rcl=0&cid=<?php echo $p_cid; ?>&aty=vc&affid=http%253A%252F%252Fck.jp.ap.valuecommerce.com%252Fservlet%252Freferral%253Fsid%253D3185576%2526pid%253D883213932%2526vc_url%253D&pt=5&appid=PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"></script>
+            <script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3185576&pid=886586878"></script>
+            <noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3185576&pid=886586878" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3185576&pid=886586878" border="0"></a></noscript>
         </div>
-        <?php } ?>
         <div class="center">
             <script type="text/javascript" src="http://adm.shinobi.jp/s/7391682fb9058aeb3b57caab93354a2f"></script>
         </div>
