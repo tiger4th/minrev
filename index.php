@@ -82,7 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="col-sm-8 is-pc">
     <div class="head-ad">
         <!-- admax -->
-        <script src="http://adm.shinobi.jp/s/53ef44afc127bc67dcee549a289d6c74"></script>
+        <script src="https://adm.shinobi.jp/s/53ef44afc127bc67dcee549a289d6c74"></script>
         <!-- admax -->
     </div>
     <br><br>
@@ -142,7 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3185576&pid=886586878" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3185576&pid=886586878" border="0"></a></noscript>
         </div>
         <div class="center">
-            <script type="text/javascript" src="http://adm.shinobi.jp/s/7391682fb9058aeb3b57caab93354a2f"></script>
+            <script type="text/javascript" src="https://adm.shinobi.jp/s/7391682fb9058aeb3b57caab93354a2f"></script>
         </div>
     </div>
     <?php } ?>
@@ -305,8 +305,8 @@ if ($id == 1) {
                         </div>
                         <hr class="comment-hr">
                         <div class="similar-search">
-                            <a href="http://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3185576&pid=883213932&vc_url=<?php echo rawurlencode('http://search.shopping.yahoo.co.jp/search?ei=UTF-8&p='.$item["Target"]["Name"]); ?>" class="zocial yahoo" target="_blank">Yahoo!で探す</a>
-                            <a href="http://www.amazon.co.jp/gp/search?ie=UTF8&camp=247&creative=1211&index=aps&keywords=<?php echo $item["Target"]["Name"]; ?>&linkCode=ur2&tag=tiger4th-22" class="zocial amazon" target="_blank">Amazonで探す</a>
+                            <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3185576&pid=883213932&vc_url=<?php echo rawurlencode('https://search.shopping.yahoo.co.jp/search?ei=UTF-8&p='.$item["Target"]["Name"]); ?>" class="zocial yahoo" target="_blank">Yahoo!で探す</a>
+                            <a href="https://www.amazon.co.jp/gp/search?ie=UTF8&camp=247&creative=1211&index=aps&keywords=<?php echo $item["Target"]["Name"]; ?>&linkCode=ur2&tag=tiger4th-22" class="zocial amazon" target="_blank">Amazonで探す</a>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -327,14 +327,14 @@ if ($id == 1) {
     <a href="#top" class="anchor"><img src="./image/top.png" width="70px" loading="lazy" /></a>
 
     <!-- Begin Yahoo! JAPAN Web Services Attribution Snippet -->
-    <a href="http://developer.yahoo.co.jp/about">
-        <img src="http://i.yimg.jp/images/yjdn/yjdn_attbtn1_125_17.gif" title="Webサービス by Yahoo! JAPAN" alt="Web Services by Yahoo! JAPAN" width="125" height="17" border="0" style="margin:15px 15px 0px 15px" loading="lazy">
+    <a href="https://developer.yahoo.co.jp/about">
+        <img src="https://i.yimg.jp/images/yjdn/yjdn_attbtn1_125_17.gif" title="Webサービス by Yahoo! JAPAN" alt="Web Services by Yahoo! JAPAN" width="125" height="17" border="0" style="margin:15px 15px 0px 15px" loading="lazy">
     </a>
     <!-- End Yahoo! JAPAN Web Services Attribution Snippet -->
     
-    <a href="http://www.amazon.co.jp/?tag=tiger4th-22" class="zocial amazon associate" target="_blank">Amazon.co.jpアソシエイト</a>
+    <a href="https://www.amazon.co.jp/?tag=tiger4th-22" class="zocial amazon associate" target="_blank">Amazon.co.jpアソシエイト</a>
     
-    <img Src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3185576&pid=883213932" height="1" width="1" Border="0">
+    <img Src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3185576&pid=883213932" height="1" width="1" Border="0">
 
     <br><br>
     <span>&copy; 2010-<?php echo date("Y"); ?> <a href="https://tiger4th.com/">tiger4th.com</a></span>

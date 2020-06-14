@@ -6,7 +6,7 @@ $id = '1';
 if(isset($_GET['id'])){
     $id = $_GET['id'];
 }
-$urlC = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/categorySearch?appid=".$app_id."&category_id=".$id;
+$urlC = "https://shopping.yahooapis.jp/ShoppingWebService/V1/json/categorySearch?appid=".$app_id."&category_id=".$id;
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -49,7 +49,7 @@ if(isset($_GET['price']) && ctype_digit($_GET['price'])){
 }
 
 //レビュー取得
-$url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/reviewSearch?appid=".$app_id."&affiliate_type=vc&affiliate_id=http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3185576%26pid%3D883213932%26vc_url%3D&results=".$results."&category_id=".$id."&sort=".$sort."&start=".$start;
+$url = "https://shopping.yahooapis.jp/ShoppingWebService/V1/json/reviewSearch?appid=".$app_id."&affiliate_type=vc&affiliate_id=http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3185576%26pid%3D883213932%26vc_url%3D&results=".$results."&category_id=".$id."&sort=".$sort."&start=".$start;
 
 curl_setopt($ch, CURLOPT_URL, $url);
 $response = curl_exec($ch);
