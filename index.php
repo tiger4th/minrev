@@ -63,15 +63,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-W9BGVV');</script>
 <!-- End Google Tag Manager -->
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
 <div class="link is-pc">
     <a href="https://tiger4th.com/">tiger4th.com</a>
 </div>
@@ -335,24 +326,6 @@ if ($id == 1) {
 <div class="clearfix"></div>
 
 <div class="footer-right">
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://minrev.main.jp/" data-text="みんなの新着レビュー">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-    <div class="fb-like" data-href="http://minrev.main.jp/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
-
-    <a href="http://b.hatena.ne.jp/entry/http://minrev.main.jp/" class="hatena-bookmark-button" data-hatena-bookmark-title="みんなの新着レビュー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
-    <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-
-    <div class="g-plusone" data-size="medium" data-href="http://minrev.main.jp/"></div>
-    
-    <span class="is-pc">
-    <!-- AddThis Button BEGIN -->
-    <a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4e3ab77310f2fc55"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
-    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e3ab77310f2fc55"></script>
-    <!-- AddThis Button END -->
-    </span>
-
-    <br>
     <a href="#top" class="anchor"><img src="./image/top.png" width="70px"/></a>
 
     <!-- Begin Yahoo! JAPAN Web Services Attribution Snippet -->
@@ -377,38 +350,6 @@ if ($id == 1) {
 </div>
 <!--/ container -->
 
-<?php if (!$sp) { ?>
-<!-- share -->
-<div class="share is-pc">
-    <p>
-        <a href="#top" class="anchor"><img src="./image/top.png" width="70px"/></a>
-    </p>
-    <p>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://minrev.main.jp/" data-text="みんなの新着レビュー" data-count="vertical">Tweet</a>
-    </p>
-    <p>
-        <div class="fb-like" data-href="http://minrev.main.jp/" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>
-    </p>
-    <p>
-        <a href="http://b.hatena.ne.jp/entry/http://minrev.main.jp/" class="hatena-bookmark-button" data-hatena-bookmark-title="みんなの新着レビュー" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
-    </p>
-    <p>
-        <div class="ninja_onebutton">
-            <script type="text/javascript">
-            //<![CDATA[
-            (function(d){
-            if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_f5aaf6564c6827526c4857336d8ab33d)=='undefined'){
-                document.write("<sc"+"ript type='text\/javascript' src='http:\/\/omt.shinobi.jp\/b\/f5aaf6564c6827526c4857336d8ab33d'><\/sc"+"ript>");
-            }else{
-                window.NINJA_CO_JP_ONETAG_BUTTON_f5aaf6564c6827526c4857336d8ab33d.ONETAGButton_Load();}
-            })(document);
-            //]]>
-            </script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
-        </div>
-    </p>
-</div>
-<!--/ share -->
-<?php } ?>
 </div>
 </body>
 </html>
