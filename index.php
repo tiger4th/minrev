@@ -278,7 +278,7 @@ if ($id == 1) {
                 <div class="comment-body boxed">
                     <div class="comment-arrow"></div>
                     <div class="comment-avatar">
-                        <div class="avatar"><a href="<?php echo $item["Target"]["Url"]; ?>#ItemInfo" target="_blank"><img src="<?php echo $item["Target"]["Image"]["Medium"]["Url"]; ?>"/></a></div>
+                        <div class="avatar"><a href="<?php echo $item["Target"]["Url"]; ?>#ItemInfo" target="_blank"><img src="<?php echo $item["Target"]["Image"]["Medium"]["Url"]; ?>" loading="lazy" /></a></div>
                         <a href="<?php echo $item["Target"]["Url"]; ?>#ItemInfo" class="btn btn-green" target="_blank"><span>詳細</span></a>
                     </div>
                     <div class="comment-text">
@@ -326,11 +326,12 @@ if ($id == 1) {
 <div class="clearfix"></div>
 
 <div class="footer-right">
-    <a href="#top" class="anchor"><img src="./image/top.png" width="70px"/></a>
+    <a href="#top" class="anchor"><img src="./image/top.png" width="70px" loading="lazy" /></a>
 
     <!-- Begin Yahoo! JAPAN Web Services Attribution Snippet -->
     <a href="http://developer.yahoo.co.jp/about">
-    <img src="http://i.yimg.jp/images/yjdn/yjdn_attbtn1_125_17.gif" title="Webサービス by Yahoo! JAPAN" alt="Web Services by Yahoo! JAPAN" width="125" height="17" border="0" style="margin:15px 15px 0px 15px"></a>
+        <img src="http://i.yimg.jp/images/yjdn/yjdn_attbtn1_125_17.gif" title="Webサービス by Yahoo! JAPAN" alt="Web Services by Yahoo! JAPAN" width="125" height="17" border="0" style="margin:15px 15px 0px 15px" loading="lazy">
+    </a>
     <!-- End Yahoo! JAPAN Web Services Attribution Snippet -->
     
     <a href="http://www.amazon.co.jp/?tag=tiger4th-22" class="zocial amazon associate" target="_blank">Amazon.co.jpアソシエイト</a>
