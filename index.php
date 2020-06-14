@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="col-sm-4">
     <div class="widget-container boxed category">
         <?php if ($id == 1) { ?>
-        <h1 class="widget-title">商品カテゴリ</h1>
+        <h1 class="widget-title" onClick="toggleList()">商品カテゴリ<i class="fa fa-bars fa-lg toggle-list"></i></h1>
         <div class="inner list-group">
             <a class="list-group-item" href="index.php?id=13457&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-female fa-fw"></i>ファッション</a>
             <a class="list-group-item" href="index.php?id=2498&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-cutlery fa-fw"></i>食品</a>
@@ -125,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <a class="list-group-item" href="index.php?id=10002&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-book fa-fw"></i>本、雑誌、コミック</a>
         </div>
         <?php } else {
-            echo '<h1 class="widget-title">'.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"].'</h1>';
+            echo '<h1 class="widget-title" onClick="toggleList()">'.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"].'<i class="fa fa-bars fa-lg toggle-list"></i></h1>';
             echo '<div class="inner list-group">';
             foreach($resC["ResultSet"][0]["Result"]["Categories"]["Children"] as $item){ 
                 if(isset($item["Title"]["Short"])){
