@@ -84,6 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <br><br>
 </div>
 
+<?php if (!$sp) { ?>
 <div class="col-sm-8 is-pc">
     <div class="head-ad">
         <!-- admax -->
@@ -92,6 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <br><br>
 </div>
+<?php } ?>
 </div>
 <!--/ row -->
 
@@ -139,6 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             echo '</div>';
         } ?>
     </div>
+    <?php if (!$sp) { ?>
     <div id="sidead" class="is-pc">
         <div class="center">
             <script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3185576&pid=886586878"></script>
@@ -148,6 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <script type="text/javascript" src="http://adm.shinobi.jp/s/7391682fb9058aeb3b57caab93354a2f"></script>
         </div>
     </div>
+    <?php } ?>
 </div>
 
 <div class="col-sm-8">

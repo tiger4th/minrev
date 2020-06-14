@@ -11,16 +11,17 @@ jQuery(document).ready(function() {
     });
 
 // sidebar ad
-    var nav = $('#sidead'),
-        offset = nav.offset();
-     
-    $(window).scroll(function () {
-      if($(window).scrollTop() > offset.top - 10) {
-        nav.addClass('fixed');
-      } else {
-        nav.removeClass('fixed');
-      }
-    });
+    var nav = $('#sidead');
+    if (nav.length) {
+        var offset = nav.offset();
+        $(window).scroll(function () {
+            if($(window).scrollTop() > offset.top - 10) {
+                nav.addClass('fixed');
+            } else {
+                nav.removeClass('fixed');
+            }
+        });
+    }
 
 // Dropdown Menu
     $(".dropdown li").hover(function(){
