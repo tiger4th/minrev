@@ -21,13 +21,6 @@ if(!isset($resC["ResultSet"])){
     exit;
 }
 
-// レビューパーツ
-if (isset($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"][1]["Id"])) {
-    $p_cid = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"][1]["Id"];
-} else {
-    $p_cid = 1;
-}
-
 //変数
 $newest  = "";
 $newer   = "";
