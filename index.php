@@ -32,7 +32,7 @@ if($id==1){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <!-- Style CSS -->
-<link href="css/bootstrap.css" media="screen" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 <link href="css/zocial.css" media="screen" rel="stylesheet">
 <link href="style.css" media="screen" rel="stylesheet">
 <link href="my.css" media="screen" rel="stylesheet">
