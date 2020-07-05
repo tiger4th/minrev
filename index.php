@@ -154,18 +154,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="row">
 <div class="col-sm-12">
     <div class="widget-container widget-search styled boxed line-left bread">
-        <div class="inner">
+        <div class="inner" itemscope itemtype="https://schema.org/BreadcrumbList">
 <?php
 if ($id == 1) {
     echo "<span>Yahoo!ショッピングから最新のレビューをお届け！</span>";
 } else {
+    $i = 1;
     foreach ($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"] as $item) {
         if (is_array($item)) {
             if ($item["Id"] == 1) {
-                echo '<div class="item"><a href="/?sort='.$sort.'&results='.$results.'"><span>トップ</span></a></div>';
+                echo '<div class="item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/?sort='.$sort.'&results='.$results.'" itemprop="item"><span itemprop="name">トップ</span></a><meta itemprop="position" content="'.$i.'" /></div>';
             } else {
-                echo '<span> &gt; </span><div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="index.php?id='.$item["Id"].'&sort='.$sort.'&results='.$results.'" itemprop="url"><span itemprop="title">'.$item["Title"]["Name"].'</span></a></div>';
+                echo '<span> &gt; </span><div class="item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.php?id='.$item["Id"].'&sort='.$sort.'&results='.$results.'" itemprop="item"><span itemprop="name">'.$item["Title"]["Name"].'</span></a><meta itemprop="position" content="'.$i.'" /></div>';
             }
+            $i++;
         }
     }
 }
