@@ -15,9 +15,9 @@ if($id!=1){
 ?>" />
 <meta name="description" content="<?php
 if($id==1){
-    echo "Yahoo!ショッピングから最新のレビューをお届けします。";
+    echo "Yahoo!ショッピングから最新のレビューをお届けします。最近話題の商品や、類似商品のレビューを高評価順や低評価順でも見られます。購入前に要チェック！";
 }else{
-    echo "Yahoo!ショッピングから".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の最新口コミ情報をお届けします。";
+    echo "Yahoo!ショッピングから".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の最新口コミ情報をお届けします。最近話題の商品や、類似商品のレビューを高評価順や低評価順でも見られます。".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"]."の購入前には要チェック！";
 }
 ?>" />
 <meta name="viewport" content="width=device-width,initial-scale=1">
