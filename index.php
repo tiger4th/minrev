@@ -305,7 +305,8 @@ if ($id == 1) {
                         </div>
                         <hr class="comment-hr">
                         <div class="similar-search">
-                            <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3185576&pid=883213932&vc_url=<?php echo rawurlencode('https://search.shopping.yahoo.co.jp/search?ei=UTF-8&p='.$item["Target"]["Name"]); ?>" class="zocial yahoo" target="_blank">Yahoo!で探す</a>
+                            <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3185576&pid=883213932&vc_url=<?php echo rawurlencode('https://search.shopping.yahoo.co.jp/search?ei=UTF-8&p='.$item["Target"]["Name"]); ?>" class="zocial yahoo" target="_blank">ヤフーで探す</a>
+                            <a href="https://hb.afl.rakuten.co.jp/hgc/13efd072.29187a8c.13efd073.0c4e5a0e/?pc=<?php echo rawurlencode('https://search.rakuten.co.jp/search/mall/'.$item["Target"]["Name"]); ?>" class="zocial rakuten" target="_blank">楽天で探す</a>
                             <a href="https://www.amazon.co.jp/gp/search?ie=UTF8&camp=247&creative=1211&index=aps&keywords=<?php echo $item["Target"]["Name"]; ?>&linkCode=ur2&tag=tiger4th-22" class="zocial amazon" target="_blank">Amazonで探す</a>
                         </div>
                     </div>

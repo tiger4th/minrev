@@ -333,6 +333,14 @@ a.zocial {
 .zocial.ycombinator:before {content: "\00ED";}
 .zocial.yelp:before {content: "y";}
 .zocial.youtube:before {content: "U";}
+.zocial.rakuten:before {
+	display: inline-block;
+    width: 26px;
+    height: 20px;
+	margin: 3px 6px;
+    background: url('../image/rakuten.svg') no-repeat;
+    background-size: contain;
+}
 
 /* Button background and text color */
 
@@ -431,10 +439,11 @@ a.zocial {
 .zocial.windows {background-color: #0052a4; color: #fff;}
 .zocial.wordpress {background-color: #464646;}
 .zocial.xing {background-color: #0a5d5e;}
-.zocial.yahoo {background-color: #ff0033; //background-color: #a200c2;}
+.zocial.yahoo {background-color: #ff0033;}
 .zocial.ycombinator {background-color: #ff6600;}
 .zocial.yelp {background-color: #e60010;}
 .zocial.youtube {background-color: #f00;}
+.zocial.rakuten {background-color: #bf0000;}
 
 /*
 The Miscellaneous Buttons

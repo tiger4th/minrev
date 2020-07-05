@@ -116,7 +116,6 @@ body {
 }
 a:hover,
 a:focus {
-	color: #8D8569;
 	text-decoration: none;
 }
 a:active{background-color: transparent;}
