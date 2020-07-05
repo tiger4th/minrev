@@ -98,39 +98,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <?php if ($id == 1) { ?>
         <h1 class="widget-title" onClick="toggleList()">商品カテゴリ<i class="fa fa-bars fa-lg toggle-list"></i></h1>
         <div class="inner list-group">
-            <a class="list-group-item" href="index.php?id=13457&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-female fa-fw"></i>ファッション</a>
-            <a class="list-group-item" href="index.php?id=2498&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-cutlery fa-fw"></i>食品</a>
-            <a class="list-group-item" href="index.php?id=2513&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-fire fa-fw"></i>レジャー、アウトドア</a>
-            <a class="list-group-item" href="index.php?id=2500&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-medkit fa-fw"></i>ダイエット、健康</a>
-            <a class="list-group-item" href="index.php?id=2501&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-tint fa-fw"></i>コスメ、香水</a>
-            <a class="list-group-item" href="index.php?id=2502&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-laptop fa-fw"></i>パソコン、周辺機器</a>
-            <a class="list-group-item" href="index.php?id=2504&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-camera fa-fw"></i>AV機器、カメラ</a>
-            <a class="list-group-item" href="index.php?id=2505&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-plug fa-fw"></i>家電</a>
-            <a class="list-group-item" href="index.php?id=2506&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-home fa-fw"></i>家具、インテリア</a>
-            <a class="list-group-item" href="index.php?id=2507&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-leaf fa-fw"></i>花、ガーデニング</a>
-            <a class="list-group-item" href="index.php?id=2508&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-archive fa-fw"></i>キッチン、生活雑貨、日用品</a>
-            <a class="list-group-item" href="index.php?id=2503&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-wrench fa-fw"></i>DIY、工具、文具</a>
-            <a class="list-group-item" href="index.php?id=2509&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-paw fa-fw"></i>ペット用品、生き物</a>
-            <a class="list-group-item" href="index.php?id=2510&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-bell-o fa-fw"></i>楽器、趣味、学習</a>
-            <a class="list-group-item" href="index.php?id=2511&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-gamepad fa-fw"></i>ゲーム、おもちゃ</a>
-            <a class="list-group-item" href="index.php?id=2497&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-child fa-fw"></i>ベビー、キッズ、マタニティ</a>
-            <a class="list-group-item" href="index.php?id=2512&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-futbol-o fa-fw"></i>スポーツ</a>
-            <a class="list-group-item" href="index.php?id=2514&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-bicycle fa-fw"></i>自転車、車、バイク</a>
-            <a class="list-group-item" href="index.php?id=2516&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-music fa-fw"></i>CD、音楽ソフト、チケット</a>
-            <a class="list-group-item" href="index.php?id=2517&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-film fa-fw"></i>DVD、映像ソフト</a>
-            <a class="list-group-item" href="index.php?id=10002&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>&price=<?php echo $price; ?>"><i class="fa fa-book fa-fw"></i>本、雑誌、コミック</a>
+            <a class="list-group-item" href="index.php?id=13457&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-female fa-fw"></i>ファッション</a>
+            <a class="list-group-item" href="index.php?id=2498&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-cutlery fa-fw"></i>食品</a>
+            <a class="list-group-item" href="index.php?id=2513&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-fire fa-fw"></i>レジャー、アウトドア</a>
+            <a class="list-group-item" href="index.php?id=2500&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-medkit fa-fw"></i>ダイエット、健康</a>
+            <a class="list-group-item" href="index.php?id=2501&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-tint fa-fw"></i>コスメ、香水</a>
+            <a class="list-group-item" href="index.php?id=2502&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-laptop fa-fw"></i>パソコン、周辺機器</a>
+            <a class="list-group-item" href="index.php?id=2504&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-camera fa-fw"></i>AV機器、カメラ</a>
+            <a class="list-group-item" href="index.php?id=2505&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-plug fa-fw"></i>家電</a>
+            <a class="list-group-item" href="index.php?id=2506&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-home fa-fw"></i>家具、インテリア</a>
+            <a class="list-group-item" href="index.php?id=2507&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-leaf fa-fw"></i>花、ガーデニング</a>
+            <a class="list-group-item" href="index.php?id=2508&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-archive fa-fw"></i>キッチン、生活雑貨、日用品</a>
+            <a class="list-group-item" href="index.php?id=2503&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-wrench fa-fw"></i>DIY、工具、文具</a>
+            <a class="list-group-item" href="index.php?id=2509&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-paw fa-fw"></i>ペット用品、生き物</a>
+            <a class="list-group-item" href="index.php?id=2510&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-bell-o fa-fw"></i>楽器、趣味、学習</a>
+            <a class="list-group-item" href="index.php?id=2511&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-gamepad fa-fw"></i>ゲーム、おもちゃ</a>
+            <a class="list-group-item" href="index.php?id=2497&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-child fa-fw"></i>ベビー、キッズ、マタニティ</a>
+            <a class="list-group-item" href="index.php?id=2512&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-futbol-o fa-fw"></i>スポーツ</a>
+            <a class="list-group-item" href="index.php?id=2514&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-bicycle fa-fw"></i>自転車、車、バイク</a>
+            <a class="list-group-item" href="index.php?id=2516&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-music fa-fw"></i>CD、音楽ソフト、チケット</a>
+            <a class="list-group-item" href="index.php?id=2517&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-film fa-fw"></i>DVD、映像ソフト</a>
+            <a class="list-group-item" href="index.php?id=10002&sort=<?php echo $sort; ?>&results=<?php echo $results; ?>"><i class="fa fa-book fa-fw"></i>本、雑誌、コミック</a>
         </div>
         <?php } else {
             echo '<h1 class="widget-title" onClick="toggleList()">'.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"].'<i class="fa fa-bars fa-lg toggle-list"></i></h1>';
             echo '<div class="inner list-group">';
             foreach($resC["ResultSet"][0]["Result"]["Categories"]["Children"] as $item){ 
                 if(isset($item["Title"]["Short"])){
-                    echo '<a class="list-group-item" href="index.php?id='.$item["Id"].'&sort='.$sort.'&results='.$results.'&price='.$price.'">'.$item["Title"]["Short"].'</a>';
+                    echo '<a class="list-group-item" href="index.php?id='.$item["Id"].'&sort='.$sort.'&results='.$results.'">'.$item["Title"]["Short"].'</a>';
                 }
             }
             if(isset($_GET['id']) && $_GET['id'] > 1){
-                echo '<a class="list-group-item" href="index.php?id='.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["ParentId"].'&sort='.$sort.'&results='.$results.'&price='.$price.'"><i class="fa fa-angle-up"></i>上のカテゴリに戻る</a>';
-                echo '<a class="list-group-item" href="index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'"><i class="fa fa-angle-double-up"></i>トップに戻る</a>';
+                echo '<a class="list-group-item" href="index.php?id='.$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["ParentId"].'&sort='.$sort.'&results='.$results.'"><i class="fa fa-angle-up"></i>上のカテゴリに戻る</a>';
+                echo '<a class="list-group-item" href="/?sort='.$sort.'&results='.$results.'"><i class="fa fa-angle-double-up"></i>トップに戻る</a>';
             }
             echo '</div>';
         } ?>
@@ -162,9 +162,9 @@ if ($id == 1) {
     foreach ($resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Path"] as $item) {
         if (is_array($item)) {
             if ($item["Id"] == 1) {
-                echo '<div class="item"><a href="index.php?id=1&sort='.$sort.'&results='.$results.'&price='.$price.'"><span>トップ</span></a></div>';
+                echo '<div class="item"><a href="/?sort='.$sort.'&results='.$results.'"><span>トップ</span></a></div>';
             } else {
-                echo '<span> &gt; </span><div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="index.php?id='.$item["Id"].'&sort='.$sort.'&results='.$results.'&price='.$price.'" itemprop="url"><span itemprop="title">'.$item["Title"]["Name"].'</span></a></div>';
+                echo '<span> &gt; </span><div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="index.php?id='.$item["Id"].'&sort='.$sort.'&results='.$results.'" itemprop="url"><span itemprop="title">'.$item["Title"]["Name"].'</span></a></div>';
             }
         }
     }
@@ -192,9 +192,9 @@ if ($id == 1) {
             <ul class="dropdown clearfix boxed">
                 <li class="first parent"><a href="#" hidefocus="true" style="outline: none;"><i class="icon-menu icon-menu4"></i><span>表示順</span></a>
                     <ul>
-                        <li class="first"><a href="index.php?id=<?php echo $id; ?>&sort=-updatetime&results=<?php echo $results; ?>&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">新着</a></li>
-                        <li class=""><a href="index.php?id=<?php echo $id; ?>&sort=-review_rate&results=<?php echo $results; ?>&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">高評価優先</a></li>
-                        <li class="last"><a href="index.php?id=<?php echo $id; ?>&sort=%2Breview_rate&results=<?php echo $results; ?>&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">低評価優先</a></li>
+                        <li class="first"><a href="index.php?id=<?php echo $id; ?>&sort=-updatetime&results=<?php echo $results; ?>" hidefocus="true" style="outline: none;">新着</a></li>
+                        <li class=""><a href="index.php?id=<?php echo $id; ?>&sort=-review_rate&results=<?php echo $results; ?>" hidefocus="true" style="outline: none;">高評価優先</a></li>
+                        <li class="last"><a href="index.php?id=<?php echo $id; ?>&sort=%2Breview_rate&results=<?php echo $results; ?>" hidefocus="true" style="outline: none;">低評価優先</a></li>
                     </ul>
                 </li>
                 <li><div class="ribbon">
@@ -220,9 +220,9 @@ if ($id == 1) {
             <ul class="dropdown clearfix boxed">
                 <li class="first parent"><a href="#" hidefocus="true" style="outline: none;"><i class="icon-menu icon-menu6"></i><span>表示数</span></a>
                     <ul>
-                        <li class="first"><a href="index.php?id=<?php echo $id; ?>&sort=<?php echo $sort; ?>&results=10&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">10件</a></li>
-                        <li class=""><a href="index.php?id=<?php echo $id; ?>&sort=<?php echo $sort; ?>&results=30&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">30件</a></li>
-                        <li class="last"><a href="index.php?id=<?php echo $id; ?>&sort=<?php echo $sort; ?>&results=50&price=<?php echo $price; ?>" hidefocus="true" style="outline: none;">50件</a></li>
+                        <li class="first"><a href="index.php?id=<?php echo $id; ?>&sort=<?php echo $sort; ?>&results=10" hidefocus="true" style="outline: none;">10件</a></li>
+                        <li class=""><a href="index.php?id=<?php echo $id; ?>&sort=<?php echo $sort; ?>&results=30" hidefocus="true" style="outline: none;">30件</a></li>
+                        <li class="last"><a href="index.php?id=<?php echo $id; ?>&sort=<?php echo $sort; ?>&results=50" hidefocus="true" style="outline: none;">50件</a></li>
                     </ul>
                 </li>
                 <li><div class="ribbon">
