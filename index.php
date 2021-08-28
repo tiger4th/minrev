@@ -50,7 +50,7 @@ if ($id != 1) {
 <meta property="og:title" content="<?php echo $title; ?>">
 <meta property="og:description" content="<?php echo $description; ?>">
 <meta property="og:url" content="https://minrev.main.jp/">
-<meta property="og:image" content="https://minrev.main.jp/image/ogp.png">
+<meta property="og:image" content="https://minrev.main.jp/image/og-image.jpg">
 <meta property="og:type" content="artcle">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@tiger4th">
