@@ -1364,7 +1364,10 @@ p{
 	color: #7b6d5e;
     text-transform: none;
 }
-.comment-entry{line-height: 19px;}
+.comment-entry{
+    line-height: 19px;
+    word-break: break-word;
+}
 
 /* Comments responsive feature */
 

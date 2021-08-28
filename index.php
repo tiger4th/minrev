@@ -1,5 +1,14 @@
 <?php require("./app_id.php"); ?>
 <?php require("./curl.php"); ?>
+<?php
+if ($id == 1) {
+    $title = "みんなの新着レビュー - 最新の口コミ情報をお届け！";
+    $description = "Yahoo!ショッピングから最新のレビューをお届けします。最近話題の商品や、類似商品のレビューを高評価順や低評価順でも見られます。購入前に要チェック！";
+} else {
+    $title = $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の新着レビュー - みんなの新着レビュー";
+    $description = "Yahoo!ショッピングから".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の最新口コミ情報をお届けします。最近話題の商品や、類似商品のレビューを高評価順や低評価順でも見られます。".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"]."の購入前には要チェック！";
+}  
+?>
 <!doctype html>
 <!--[if lt IE 7 ]><html lang="ja" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]><html lang="ja" class="no-js ie7"> <![endif]-->
@@ -9,30 +18,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="keywords" content="レビュー,新着,ヤフー,Yahoo!,ショッピング,商品<?php
-if($id!=1){
+if ($id != 1) {
     echo ",".str_replace("、", ",", $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]);
 }
 ?>" />
-<meta name="description" content="<?php
-if($id==1){
-    echo "Yahoo!ショッピングから最新のレビューをお届けします。最近話題の商品や、類似商品のレビューを高評価順や低評価順でも見られます。購入前に要チェック！";
-}else{
-    echo "Yahoo!ショッピングから".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の最新口コミ情報をお届けします。最近話題の商品や、類似商品のレビューを高評価順や低評価順でも見られます。".$resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Short"]."の購入前には要チェック！";
-}
-?>" />
+<meta name="description" content="<?php echo $description; ?>" />
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title><?php
-    if($id==1){
-        echo "みんなの新着レビュー - 最新の口コミ情報をお届け！";
-    }else{
-        echo $resC["ResultSet"][0]["Result"]["Categories"]["Current"]["Title"]["Medium"]."の新着レビュー - みんなの新着レビュー";
-    }
-?></title>
+<title><?php echo $title; ?></title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 <link href="css/zocial.css" media="screen" rel="stylesheet">
 <link href="style.css" media="screen" rel="stylesheet">
-<link href="my.css" media="screen" rel="stylesheet">
+<link href="my.css?v=20210828" media="screen" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 <!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
@@ -42,8 +39,21 @@ if($id==1){
 </style>
 <![endif]-->
 
-<link rel="shortcut icon" href="./image/favicon.ico" type="image/vnd.microsoft.icon" />
-<link rel="icon" href="./image/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="theme-color" content="#ffffff">
+
+<meta property="og:site_name" content="みんなの新着レビュー" />
+<meta property="og:title" content="<?php echo $title; ?>">
+<meta property="og:description" content="<?php echo $description; ?>">
+<meta property="og:url" content="https://minrev.main.jp/">
+<meta property="og:image" content="https://minrev.main.jp/image/ogp.png">
+<meta property="og:type" content="artcle">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@tiger4th">
 </head>
 
 <body id="top">
