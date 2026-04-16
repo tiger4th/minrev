@@ -1,3 +1,4 @@
+<?php http_response_code(404); ?>
 <?php require("./app_id.php"); ?>
 <?php require("./curl.php"); ?>
 <?php
